@@ -1,0 +1,368 @@
+{
+  "categories": {
+    "equalisers": {
+      "title": "equalisers",
+      "id": "equalisers",
+      "frontImg": "img/Screen Shot 2022-04-08 at 2.41.33 pm.png",
+      "items": [
+        {
+          "title": "Bettermaker EQ232D",
+          "body": "Developed by Brainworx",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 2.39.00 pm.png"
+          ]
+        },
+        {
+          "title": "Acustica Gold 4 EQ",
+          "body": "Magnifique Neve modelled EQ",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 2.41.33 pm.png"
+          ]
+        },
+        {
+          "title": "Lindell TE-100",
+          "body": "It's pretty good",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 2.42.13 pm.png"
+          ]
+        },
+        {
+          "title": "Acustica Magenta 5",
+          "body": "Manley labs modelled EQ",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 2.42.44 pm.png"
+          ]
+        },
+        {
+          "title": "FabFilter Pro-Q 3",
+          "body": "Most lovely digital parametric EQ",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 2.43.34 pm.png"
+          ]
+        },
+        {
+          "title": "Acustica Taupe EQ",
+          "body": "EQ Module from the Taupe suite",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 2.43.59 pm.png"
+          ]
+        },
+        {
+          "title": "Tokyo Dawn Labs SlickEQ Mastering Edition",
+          "body": "Good and cheap.",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 2.44.15 pm.png"
+          ]
+        },
+        {
+          "title": "Dangerous BAX EQ",
+          "body": "Developed by Brainworx",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 2.39.49 pm.png"
+          ]
+        }
+      ]
+    },
+    "compressors": {
+      "title": "compressors",
+      "id": "compressors",
+      "frontImg": "img/Screen Shot 2022-04-08 at 2.48.44 pm.png",
+      "items": [
+        {
+          "title": "Tokyo Dawn Labs Molot GE",
+          "body": "Good and cheap",
+          "media":[
+            "img/Screen Shot 2022-04-08 at 2.46.33 pm.png"
+          ]
+        },
+        {
+          "title": "SSL Native X-Comp v6",
+          "body": "Developed by Solid State Logic",
+          "media":[
+            "img/Screen Shot 2022-04-08 at 2.47.48 pm.png"
+          ]
+        },
+        {
+          "title": "SPL IRON",
+          "body": "Developed in collaboration with Brainworx",
+          "media":[
+            "img/Screen Shot 2022-04-08 at 2.48.44 pm.png"
+          ]
+        },
+        {
+          "title": "FabFilter Pro-C 2",
+          "body": "Really good and really not cheap at all.",
+          "media":[
+            "img/Screen Shot 2022-04-08 at 2.49.53 pm.png"
+          ]
+        },
+        {
+          "title": "Acustica El Rey",
+          "body": "Probably most likely the best compressor of all time",
+          "media":[
+            "img/Screen Shot 2022-04-08 at 2.52.20 pm.png"
+          ]
+        },
+        {
+          "title": "Softube FET Compressor",
+          "body": "It's intense.",
+          "media":[
+            "img/Screen Shot 2022-04-08 at 2.51.03 pm.png"
+          ]
+        },
+        {
+          "title": "Purple Audio MC 77",
+          "body": "Developed by Brainworx",
+          "media":[
+            "img/Screen Shot 2022-04-08 at 2.49.11 pm.png"
+          ]
+        },
+        {
+          "title": "Vertigo VSC-2",
+          "body": "Developed by Brainworx",
+          "media":[
+            "img/Screen Shot 2022-04-08 at 2.46.15 pm.png"
+          ]
+        }
+      ]
+    },
+    "effects": {
+      "title": "effects",
+      "id": "effects",
+      "frontImg": "img/Screen Shot 2022-04-08 at 3.10.25 pm.png",
+      "items": [
+        {
+          "title": "Arturia Chorus DIMENSION-D",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.02.40 pm.png"
+          ],
+          "body": "Modelled from a popular Roland effect rack."
+        },
+        {
+          "title": "Impulse Records Convology-XT",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.03.07 pm.png"
+          ],
+          "body": "Very decent and free convolution plugin, developed in collaboration with WaveArts."
+        },
+        {
+          "title": "Audio Damage Dubstation 2",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.03.55 pm.png"
+          ],
+          "body": "Cheap, good quality and low resource usage."
+        },
+        {
+          "title": "Freakshow Industries Dumpster Fire",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.04.21 pm.png"
+          ],
+          "body": "It's a weird pitch shifting effect with no helpful controls."
+        },
+        {
+          "title": "Soundtoys Echoboy",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.05.33 pm.png"
+          ],
+          "body": "A very fine delay indeed."
+        },
+        {
+          "title": "Acustica Lemon",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.10.25 pm.png"
+          ],
+          "body": "Very likely the greatest delay of all time."
+        },
+        {
+          "title": "Unfiltered Audio Silo",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.12.34 pm.png"
+          ],
+          "body": "Flexible granular effect."
+        },
+        {
+          "title": "ValhallaDSP ValhallaVintageVerb",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.13.50 pm.png"
+          ],
+          "body": "Superb reverb I heard."
+        }
+      ]
+    },
+    "synthesisers": {
+      "title": "synthesisers",
+      "id": "synthesisers",
+      "frontImg": "img/Screen Shot 2022-04-08 at 3.28.59 pm.png",
+      "items": [
+        {
+          "title": "Cherry Audio CA-2600",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.25.23 pm.png"
+          ],
+          "body": "Semi-modular based on an ARP synth."
+        },
+        {
+          "title": "Softube Model 72",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.25.55 pm.png"
+          ],
+          "body": "Modelled on a famous Moog model."
+        },
+        {
+          "title": "Arturia Pigments",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.28.11 pm.png"
+          ],
+          "body": "A very capable original design."
+        },
+        {
+          "title": "Xfer Records Serum",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.28.59 pm.png"
+          ],
+          "body": "One of the most well known synth plugins, it is a very good wavetable synth."
+        },
+        {
+          "title": "Lennar Digital Sylenth1",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.30.06 pm.png"
+          ],
+          "body": "A widely used synth plugin. This image shows Sylenth1 with a custom skin."
+        },
+        {
+          "title": "KV331 Audio SynthMaster 2",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.31.04 pm.png"
+          ],
+          "body": "Another popular and flexible synth plugin capable of various types of synthesis."
+        },
+        {
+          "title": "KiloHearts Phase Plant",
+          "media": [
+            "img/Screen Shot 2022-04-07 at 5.05.22 pm.png"
+          ],
+          "body": "Fully modular synth and effects racks with vast capabilities."
+        },
+        {
+          "title": "Future Audio Workshop Sublab",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.29.28 pm.png"
+          ],
+          "body": "Synth designed specifically for low end sounds, uses a combo of synthesis and samples."
+        }
+      ]
+    },
+    "distortion": {
+      "title": "distortion",
+      "id": "distortion",
+      "frontImg": "img/Screen Shot 2022-04-08 at 2.54.08 pm.png",
+      "items": [
+        {
+          "title": "Soundtoys Decapitator",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 2.54.08 pm.png"
+          ],
+          "body": "Sounds very saucy on drums."
+        },
+        {
+          "title": "elysia Phil's Cascade",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 2.54.27 pm.png"
+          ],
+          "body": "Strange saturation plugin from someone called Phil."
+        },
+        {
+          "title": "XLN Audio RC-20 Retro Color",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 2.55.19 pm.png"
+          ],
+          "body": "More a multi-effect, but does plenty of distorting."
+        },
+        {
+          "title": "Vertigo VSM-3",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 2.56.30 pm.png"
+          ],
+          "body": "Developed by Brainworx"
+        },
+        {
+          "title": "Audiority Big Goat",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 2.57.29 pm.png"
+          ],
+          "body": "Modelled on the American version of the EHX Big Muff overdrive pedal."
+        },
+        {
+          "title": "KiloHearts Faturator",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 2.59.28 pm.png"
+          ],
+          "body": "Very nifty little crunch plugin with good colouring features."
+        },
+        {
+          "title": "Output Thermal",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.00.29 pm.png"
+          ],
+          "body": "Intense and very flexible."
+        },
+        {
+          "title": "Soundtoys Devil-Loc Deluxe",
+          "media": [
+            "img/Screen Shot 2021-08-29 at 11.30.56 pm.png"
+          ],
+          "body": "Best distortion ever probably maybe definitely."
+        }
+      ]
+    },
+    "misc": {
+      "title": "misc",
+      "id": "misc",
+      "frontImg": "img/Screen Shot 2022-04-08 at 3.23.27 pm.png",
+      "items": [
+        {
+          "title": "Klanghelm VUMTdeluxe",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.24.02 pm.png"
+          ],
+          "body": "High quality VU meter emulation and monitoring utility."
+        },
+        {
+          "title": "United Plugins Subbass Doctor 808",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.23.47 pm.png"
+          ],
+          "body": "Utility plugin for handling excessive low frequencies. Developed by Soundevice Digital."
+        },
+        {
+          "title": "NUGEN Stereoplacer3",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.23.27 pm.png"
+          ],
+          "body": "Sophisticated frequency panning utility."
+        },
+        {
+          "title": "Melda MMultiAnalyzer",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.23.07 pm.png"
+          ],
+          "body": "Feature rich frequency analysis and monitoring utility."
+        },
+        {
+          "title": "DestroyFX Buffer Override",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.15.59 pm.png"
+          ],
+          "body": "A glitchy and wonderful free glitch effect."
+        },
+        {
+          "title": "Cableguys ShaperBox 2",
+          "media": [
+            "img/Screen Shot 2022-04-08 at 3.19.50 pm.png"
+          ],
+          "body": "High quality modular multi-effect with precise modulation control."
+        }
+      ]
+    }
+  }
+}

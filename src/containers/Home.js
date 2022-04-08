@@ -1,7 +1,20 @@
-function Home({ children }) {
+import FlexboxLink from '../components/FlexboxLink';
+
+function Home({ categories = [] }) {
   return (
-    <div>
-      {children}
+    <div className="flex flex-row flex-wrap w-full p-2">
+      {categories.map(({
+        title, items, frontImg, id
+      }) => (
+        <FlexboxLink
+          to={`/category/${id}`}
+          key={`category-box-${id}`}
+        >
+          {frontImg ? <img width={400} src={frontImg} alt={title} /> : null}
+          <h2 className="text-xl font-bold mb-2 capitalize">{title}</h2>
+          <p className="italic">Contains {items.length} items</p>
+        </FlexboxLink>
+      ))}
     </div>
   );
 }

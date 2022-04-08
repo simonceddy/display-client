@@ -1,4 +1,9 @@
-function IconButton({ children, className, onClick, submits = false }) {
+function IconButton({
+  children,
+  className,
+  onClick,
+  submits = false
+}) {
   return (
     <button
       className={`${className}`}
