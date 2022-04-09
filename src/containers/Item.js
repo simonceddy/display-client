@@ -1,39 +1,41 @@
-import { Link, useParams } from 'react-router-dom';
-import { dataset } from '../data';
+import { useParams } from 'react-router-dom';
+import GotoItemLink from '../components/GotoItemLink';
+import { getCategoryItem, getTotalItemsFor } from '../data';
 
 function Item() {
   const { categoryId, itemId } = useParams();
   const id = Number(itemId);
-  if (!dataset.categories[categoryId]
-    || !dataset.categories[categoryId].items[itemId]
-  ) {
+  const data = getCategoryItem(categoryId, itemId);
+  if (!data) {
     return <div>Not found!</div>;
   }
-  const data = dataset.categories[categoryId].items[itemId];
-  const totalItems = dataset.categories[categoryId].items.length;
+  const totalItems = getTotalItemsFor(categoryId);
+
   return (
-    <div className="flex flex-col w-full justify-start items-center">
+    <div className="flex flex-col w-full h-full justify-start items-center">
       <h2 className="text-4xl">
         {data.title}
       </h2>
-      <div className="flex-1">
+      <div className="">
         {!data.media[0] ? null : (
           <img src={data.media[0]} alt={data.title} width={900} />
         )}
       </div>
-      <div>
+      <div className="text-green-200 p-4 text-xl flex-1">
         {data.body}
       </div>
-      {id > 0 ? (
-        <Link to={`/category/${categoryId}/item/${id - 1}`}>
-          Previous
-        </Link>
-      ) : null}
-      {id < (totalItems - 1) ? (
-        <Link to={`/category/${categoryId}/item/${id + 1}`}>
-          Next
-        </Link>
-      ) : null}
+      <div className="w-full flex-row justify-start items-center p-4 border-t-2 border-green-200">
+        {id > 0 ? (
+          <GotoItemLink to={`/category/${categoryId}/item/${id - 1}`}>
+            Previous
+          </GotoItemLink>
+        ) : null}
+        {id < (totalItems - 1) ? (
+          <GotoItemLink to={`/category/${categoryId}/item/${id + 1}`}>
+            Next
+          </GotoItemLink>
+        ) : null}
+      </div>
     </div>
   );
 }

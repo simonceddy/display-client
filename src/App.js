@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { BiHome as HomeIcon, BiArrowBack as BackIcon } from 'react-icons/bi';
 import OuterContainer from './components/OuterContainer';
 import Home from './containers/Home';
-import { dataset } from './data';
+import { getCategories } from './data';
 import Category from './containers/Category';
 import Navbar from './components/Navbar';
 import NavbarLink from './components/NavbarLink';
@@ -10,7 +10,7 @@ import Item from './containers/Item';
 
 // console.log(dataset.categories);
 
-const categories = Object.values(dataset.categories);
+const categories = Object.values(getCategories());
 
 function App() {
   return (

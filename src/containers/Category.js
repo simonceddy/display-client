@@ -1,14 +1,13 @@
 import { useParams } from 'react-router-dom';
 import FlexboxLink from '../components/FlexboxLink';
-import { dataset } from '../data';
+import { getCategory } from '../data';
 
 function Category() {
   const params = useParams();
-  if (!dataset.categories[params.categoryId]) {
+  const data = getCategory(params.categoryId);
+  if (!data) {
     return <div>Not found!</div>;
   }
-
-  const data = dataset.categories[params.categoryId];
 
   return (
     <div className="flex flex-col justify-start items-center">
