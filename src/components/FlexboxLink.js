@@ -6,7 +6,7 @@ function FlexboxLink({ children, to }) {
       to={to}
       className="p-2 m-2 flex flex-col cursor-pointer justify-center items-center"
       style={{
-        flex: '1 1 340px'
+        flex: '1 1 290px'
       }}
     >
       {children}

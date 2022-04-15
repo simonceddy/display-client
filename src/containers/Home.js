@@ -10,7 +10,16 @@ function Home({ categories = [] }) {
           to={`/category/${id}`}
           key={`category-box-${id}`}
         >
-          {frontImg ? <img width={400} src={frontImg} alt={title} /> : null}
+          {frontImg ? (
+            <img
+              style={{
+                maxHeight: '200px',
+                maxWidth: '100%'
+              }}
+              src={frontImg}
+              alt={title}
+            />
+          ) : null}
           <h2 className="text-xl font-bold mb-2 capitalize">{title}</h2>
           <p className="italic">Contains {items.length} items</p>
         </FlexboxLink>
