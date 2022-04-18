@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.24 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -488,6 +488,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
+.w-40 {
+  width: 10rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -520,13 +524,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: center;
 }
 
-.border-t-2 {
-  border-top-width: 2px;
-}
-
-.border-green-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(187 247 208 / var(--tw-border-opacity));
+.justify-between {
+  justify-content: space-between;
 }
 
 .bg-blue-800 {

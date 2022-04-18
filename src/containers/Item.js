@@ -1,38 +1,50 @@
+import { useMemo } from 'react';
+import {
+  BiLeftArrowCircle as PreviousIcon,
+  BiRightArrowCircle as NextIcon
+} from 'react-icons/bi';
 import { useParams } from 'react-router-dom';
 import GotoItemLink from '../components/GotoItemLink';
-import { getCategoryItem, getTotalItemsFor } from '../data';
+import ItemMedia from '../components/ItemMedia';
 
-function Item() {
+const iconSize = 40;
+
+function Item({ getItemFrom = () => ({}) }) {
   const { categoryId, itemId } = useParams();
   const id = Number(itemId);
-  const data = getCategoryItem(categoryId, itemId);
-  if (!data) {
+  const data = useMemo(() => getItemFrom(categoryId, itemId), [categoryId, itemId]);
+  if (!data.media) {
     return <div>Not found!</div>;
   }
-  const totalItems = getTotalItemsFor(categoryId);
+
+  const totalItems = data.totalItems || 0;
 
   return (
-    <div className="flex flex-col w-full h-full justify-start items-center">
-      <h2 className="text-4xl">
-        {data.title}
-      </h2>
-      <div className="">
-        {!data.media[0] ? null : (
-          <img src={data.media[0]} alt={data.title} width={900} />
-        )}
-      </div>
-      <div className="text-green-200 p-4 text-xl flex-1">
-        {data.body}
-      </div>
-      <div className="w-full flex-row justify-start items-center p-4 border-t-2 border-green-200">
+    <div className="w-full h-full flex flex-row justify-between items-center">
+      <div className="h-full w-40 p-4">
         {id > 0 ? (
           <GotoItemLink to={`/category/${categoryId}/item/${id - 1}`}>
-            Previous
+            <PreviousIcon size={iconSize} />
           </GotoItemLink>
         ) : null}
+      </div>
+      <div className="flex-1 flex flex-col w-full h-full justify-start items-center">
+        <h2 className="text-4xl">
+          {data.title}
+        </h2>
+        <div className="">
+          {!data.media[0] ? null : (
+            <ItemMedia src={data.media[0]} alt={data.title} type="video" />
+          )}
+        </div>
+        <div className="text-green-200 p-4 text-xl flex-1">
+          {data.body}
+        </div>
+      </div>
+      <div className="h-full w-40 p-4">
         {id < (totalItems - 1) ? (
           <GotoItemLink to={`/category/${categoryId}/item/${id + 1}`}>
-            Next
+            <NextIcon size={iconSize} />
           </GotoItemLink>
         ) : null}
       </div>
