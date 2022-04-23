@@ -82,12 +82,13 @@ class App extends Component {
             <Route path="/" element={<Home categories={data} />} />
             <Route
               path="/category/:categoryId"
-              element={<Category getCategory={this.getCategory} />}
-            />
-            <Route
-              path="/category/:categoryId/item/:itemId"
-              element={<Item getItemFrom={this.getItemFrom} />}
-            />
+            >
+              <Route
+                path="item/:itemId"
+                element={<Item getItemFrom={this.getItemFrom} />}
+              />
+              <Route index element={<Category getCategory={this.getCategory} />} />
+            </Route>
           </Routes>
         )}
       </OuterContainer>

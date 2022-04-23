@@ -6,6 +6,7 @@ import {
 import { useParams } from 'react-router-dom';
 import GotoItemLink from '../components/GotoItemLink';
 import ItemMedia from '../components/ItemMedia';
+import { MEDIA_BASE_URI } from '../shared/consts';
 
 const iconSize = 40;
 
@@ -34,7 +35,7 @@ function Item({ getItemFrom = () => ({}) }) {
         </h2>
         <div className="">
           {!data.media[0] ? null : (
-            <ItemMedia src={data.media[0]} alt={data.title} type="video" />
+            <ItemMedia src={`${MEDIA_BASE_URI}${data.media[0]}`} alt={data.title} type="video" />
           )}
         </div>
         <div className="text-green-200 p-4 text-xl flex-1">

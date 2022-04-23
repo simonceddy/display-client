@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import FlexboxLink from '../components/FlexboxLink';
+import { MEDIA_BASE_URI } from '../shared/consts';
 
 function Category({ getCategory = () => ({}) }) {
   const { categoryId } = useParams();
@@ -27,7 +28,7 @@ function Category({ getCategory = () => ({}) }) {
                   maxHeight: '200px',
                   width: 'auto'
                 }}
-                src={item.frontImg}
+                src={`${MEDIA_BASE_URI}${item.frontImg}`}
                 alt={item.title}
               />
             ) : null}

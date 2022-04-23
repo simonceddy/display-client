@@ -1,4 +1,5 @@
 import FlexboxLink from '../components/FlexboxLink';
+import { MEDIA_BASE_URI } from '../shared/consts';
 
 function Home({ categories = [] }) {
   return (
@@ -16,7 +17,7 @@ function Home({ categories = [] }) {
                 maxHeight: '200px',
                 maxWidth: '100%'
               }}
-              src={frontImg}
+              src={`${MEDIA_BASE_URI}${frontImg}`}
               alt={title}
             />
           ) : null}
