@@ -31,12 +31,13 @@ class App extends Component {
   componentDidMount() {
     populateData()
       .then((result) => {
-        // console.log(result);
+        console.log(result);
         this.setState({
           categories: result,
           isLoaded: true
         });
-      });
+      })
+      .then(() => console.log(this.state));
   }
 
   getCategory(categoryId, subCategoryId = null) {

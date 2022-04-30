@@ -46,4 +46,5 @@ export function getCategoryItem(categoryId, itemId) {
  */
 export function populateData() {
   return getCategories();
+  // return Promise.resolve(dataset.categories);
 }

@@ -8,6 +8,7 @@
         {
           "title": "Bettermaker EQ232D",
           "body": "Developed by Brainworx",
+          "id": "bettermakerEQ232D",
           "media": [
             "img/Screen Shot 2022-04-08 at 2.39.00 pm.png"
           ]
@@ -15,6 +16,7 @@
         {
           "title": "Acustica Gold 4 EQ",
           "body": "Magnifique Neve modelled EQ",
+          "id": "gold4EQ",
           "media": [
             "img/Screen Shot 2022-04-08 at 2.41.33 pm.png"
           ]
@@ -22,6 +24,7 @@
         {
           "title": "Lindell TE-100",
           "body": "It's pretty good",
+          "id": "te100",
           "media": [
             "img/Screen Shot 2022-04-08 at 2.42.13 pm.png"
           ]
@@ -29,6 +32,7 @@
         {
           "title": "Acustica Magenta 5",
           "body": "Manley labs modelled EQ",
+          "id": "magenta5",
           "media": [
             "img/Screen Shot 2022-04-08 at 2.42.44 pm.png"
           ]
@@ -36,6 +40,7 @@
         {
           "title": "FabFilter Pro-Q 3",
           "body": "Most lovely digital parametric EQ",
+          "id": "proQ3",
           "media": [
             "img/Screen Shot 2022-04-08 at 2.43.34 pm.png"
           ]
@@ -43,6 +48,7 @@
         {
           "title": "Acustica Taupe EQ",
           "body": "EQ Module from the Taupe suite",
+          "id": "taupeEq",
           "media": [
             "img/Screen Shot 2022-04-08 at 2.43.59 pm.png"
           ]
@@ -50,6 +56,7 @@
         {
           "title": "Tokyo Dawn Labs SlickEQ Mastering Edition",
           "body": "Good and cheap.",
+          "id": "slickEqME",
           "media": [
             "img/Screen Shot 2022-04-08 at 2.44.15 pm.png"
           ]
@@ -57,6 +64,7 @@
         {
           "title": "Dangerous BAX EQ",
           "body": "Developed by Brainworx",
+          "id": "baxEq",
           "media": [
             "img/Screen Shot 2022-04-08 at 2.39.49 pm.png"
           ]
@@ -71,6 +79,7 @@
         {
           "title": "Tokyo Dawn Labs Molot GE",
           "body": "Good and cheap",
+          "id": "molotGe",
           "media":[
             "img/Screen Shot 2022-04-08 at 2.46.33 pm.png"
           ]
@@ -78,6 +87,7 @@
         {
           "title": "SSL Native X-Comp v6",
           "body": "Developed by Solid State Logic",
+          "id": "xCompV6",
           "media":[
             "img/Screen Shot 2022-04-08 at 2.47.48 pm.png"
           ]
@@ -85,6 +95,7 @@
         {
           "title": "SPL IRON",
           "body": "Developed in collaboration with Brainworx",
+          "id": "splIron",
           "media":[
             "img/Screen Shot 2022-04-08 at 2.48.44 pm.png"
           ]
@@ -92,6 +103,7 @@
         {
           "title": "FabFilter Pro-C 2",
           "body": "Really good and really not cheap at all.",
+          "id": "proC2",
           "media":[
             "img/Screen Shot 2022-04-08 at 2.49.53 pm.png"
           ]
@@ -99,6 +111,7 @@
         {
           "title": "Acustica El Rey",
           "body": "Probably most likely the best compressor of all time",
+          "id": "elRey",
           "media":[
             "img/Screen Shot 2022-04-08 at 2.52.20 pm.png"
           ]
@@ -106,6 +119,7 @@
         {
           "title": "Softube FET Compressor",
           "body": "It's intense.",
+          "id": "softubeFETCompressor",
           "media":[
             "img/Screen Shot 2022-04-08 at 2.51.03 pm.png"
           ]
@@ -113,6 +127,7 @@
         {
           "title": "Purple Audio MC 77",
           "body": "Developed by Brainworx",
+          "id": "mc77",
           "media":[
             "img/Screen Shot 2022-04-08 at 2.49.11 pm.png"
           ]
@@ -120,6 +135,7 @@
         {
           "title": "Vertigo VSC-2",
           "body": "Developed by Brainworx",
+          "id": "vsc2",
           "media":[
             "img/Screen Shot 2022-04-08 at 2.46.15 pm.png"
           ]
@@ -133,6 +149,7 @@
       "items": [
         {
           "title": "Arturia Chorus DIMENSION-D",
+          "id": "chorusDimensionD",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.02.40 pm.png"
           ],
@@ -140,6 +157,7 @@
         },
         {
           "title": "Impulse Records Convology-XT",
+          "id": "convologyXT",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.03.07 pm.png"
           ],
@@ -147,6 +165,7 @@
         },
         {
           "title": "Audio Damage Dubstation 2",
+          "id": "dubstation2",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.03.55 pm.png"
           ],
@@ -154,6 +173,7 @@
         },
         {
           "title": "Freakshow Industries Dumpster Fire",
+          "id": "dumpsterFire",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.04.21 pm.png"
           ],
@@ -161,6 +181,7 @@
         },
         {
           "title": "Soundtoys Echoboy",
+          "id": "echoboy",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.05.33 pm.png"
           ],
@@ -168,6 +189,7 @@
         },
         {
           "title": "Acustica Lemon",
+          "id": "lemon",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.10.25 pm.png"
           ],
@@ -175,6 +197,7 @@
         },
         {
           "title": "Unfiltered Audio Silo",
+          "id": "silo",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.12.34 pm.png"
           ],
@@ -182,6 +205,7 @@
         },
         {
           "title": "ValhallaDSP ValhallaVintageVerb",
+          "id": "valhallaVintageVerb",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.13.50 pm.png"
           ],
@@ -196,6 +220,7 @@
       "items": [
         {
           "title": "Cherry Audio CA-2600",
+          "id": "ca2600",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.25.23 pm.png"
           ],
@@ -203,6 +228,7 @@
         },
         {
           "title": "Softube Model 72",
+          "id": "model72",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.25.55 pm.png"
           ],
@@ -210,6 +236,7 @@
         },
         {
           "title": "Arturia Pigments",
+          "id": "pigments",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.28.11 pm.png"
           ],
@@ -217,6 +244,7 @@
         },
         {
           "title": "Xfer Records Serum",
+          "id": "serum",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.28.59 pm.png"
           ],
@@ -224,6 +252,7 @@
         },
         {
           "title": "Lennar Digital Sylenth1",
+          "id": "sylenth1",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.30.06 pm.png"
           ],
@@ -231,6 +260,7 @@
         },
         {
           "title": "KV331 Audio SynthMaster 2",
+          "id": "synthmaster2",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.31.04 pm.png"
           ],
@@ -238,6 +268,7 @@
         },
         {
           "title": "KiloHearts Phase Plant",
+          "id": "phasePlant",
           "media": [
             "img/Screen Shot 2022-04-07 at 5.05.22 pm.png"
           ],
@@ -245,6 +276,7 @@
         },
         {
           "title": "Future Audio Workshop Sublab",
+          "id": "sublab",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.29.28 pm.png"
           ],
@@ -259,6 +291,7 @@
       "items": [
         {
           "title": "Soundtoys Decapitator",
+          "id": "decapitator",
           "media": [
             "img/Screen Shot 2022-04-08 at 2.54.08 pm.png"
           ],
@@ -266,6 +299,7 @@
         },
         {
           "title": "elysia Phil's Cascade",
+          "id": "philsCascade",
           "media": [
             "img/Screen Shot 2022-04-08 at 2.54.27 pm.png"
           ],
@@ -273,6 +307,7 @@
         },
         {
           "title": "XLN Audio RC-20 Retro Color",
+          "id": "rc20",
           "media": [
             "img/Screen Shot 2022-04-08 at 2.55.19 pm.png"
           ],
@@ -280,6 +315,7 @@
         },
         {
           "title": "Vertigo VSM-3",
+          "id": "vsm3",
           "media": [
             "img/Screen Shot 2022-04-08 at 2.56.30 pm.png"
           ],
@@ -287,6 +323,7 @@
         },
         {
           "title": "Audiority Big Goat",
+          "id": "bigGoat",
           "media": [
             "img/Screen Shot 2022-04-08 at 2.57.29 pm.png"
           ],
@@ -294,6 +331,7 @@
         },
         {
           "title": "KiloHearts Faturator",
+          "id": "faturator",
           "media": [
             "img/Screen Shot 2022-04-08 at 2.59.28 pm.png"
           ],
@@ -301,6 +339,7 @@
         },
         {
           "title": "Output Thermal",
+          "id": "thermal",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.00.29 pm.png"
           ],
@@ -308,6 +347,7 @@
         },
         {
           "title": "Soundtoys Devil-Loc Deluxe",
+          "id": "devillocDeluxe",
           "media": [
             "img/Screen Shot 2021-08-29 at 11.30.56 pm.png"
           ],
@@ -322,6 +362,7 @@
       "items": [
         {
           "title": "Klanghelm VUMTdeluxe",
+          "id": "vumtDeluxe",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.24.02 pm.png"
           ],
@@ -329,6 +370,7 @@
         },
         {
           "title": "United Plugins Subbass Doctor 808",
+          "id": "subbassDoctor808",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.23.47 pm.png"
           ],
@@ -336,6 +378,7 @@
         },
         {
           "title": "NUGEN Stereoplacer3",
+          "id": "stereoplacer3",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.23.27 pm.png"
           ],
@@ -343,6 +386,7 @@
         },
         {
           "title": "Melda MMultiAnalyzer",
+          "id": "",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.23.07 pm.png"
           ],
@@ -350,6 +394,7 @@
         },
         {
           "title": "DestroyFX Buffer Override",
+          "id": "bufferOverride",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.15.59 pm.png"
           ],
@@ -357,6 +402,7 @@
         },
         {
           "title": "Cableguys ShaperBox 2",
+          "id": "shaperBox2",
           "media": [
             "img/Screen Shot 2022-04-08 at 3.19.50 pm.png"
           ],
