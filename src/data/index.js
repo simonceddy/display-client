@@ -39,3 +39,11 @@ export function getCategoryItem(categoryId, itemId) {
   }
   return dataset.categories[categoryId].items[itemId];
 }
+
+/**
+ * Fetch app data
+ * @returns {Promise}
+ */
+export function populateData() {
+  return getCategories();
+}

@@ -5,7 +5,7 @@ import { BiHome as HomeIcon, BiArrowBack as BackIcon } from 'react-icons/bi';
 import { Component } from 'react';
 import OuterContainer from './components/OuterContainer';
 import Home from './containers/Home';
-import { getCategories } from './data';
+import { populateData } from './data';
 import Category from './containers/Category';
 import Navbar from './components/Navbar';
 import NavbarLink from './components/NavbarLink';
@@ -14,7 +14,7 @@ import BackToCategoryButton from './components/BackToCategoryButton';
 
 // console.log(dataset.categories);
 
-// const categories = Object.values(getCategories());
+// const categories = Object.values(populateData());
 
 class App extends Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getCategories()
+    populateData()
       .then((result) => {
         // console.log(result);
         this.setState({
@@ -39,19 +39,26 @@ class App extends Component {
       });
   }
 
-  getCategory(categoryId) {
-    console.log(categoryId, this.state);
-    return this.state.categories[categoryId] ? {
+  getCategory(categoryId, subCategoryId = null) {
+    // console.log(categoryId, this.state);
+    const c = this.state.categories[categoryId] ? {
       ...this.state.categories[categoryId],
       totalItems: this.state.categories[categoryId].items
         ? this.state.categories[categoryId].items.length
         : 0
     } : false;
+
+    if (subCategoryId && c.categories) {
+      const subC = c.categories.find((s) => (s.id === subCategoryId));
+      return subC;
+    }
+
+    return c;
   }
 
-  getItemFrom(categoryId, itemId) {
-    const c = this.getCategory(categoryId);
-    console.log(c, this.state);
+  getItemFrom(categoryId, itemId, subCategoryId = null) {
+    const c = this.getCategory(categoryId, subCategoryId);
+    // console.log(c, this.state);
     if (!c) {
       console.log(categoryId, itemId);
       return false;
@@ -85,6 +92,11 @@ class App extends Component {
             >
               <Route
                 path="item/:itemId"
+                element={<Item getItemFrom={this.getItemFrom} />}
+              />
+              <Route path=":subCategoryId" element={<Category getCategory={this.getCategory} />} />
+              <Route
+                path=":subCategoryId/item/:itemId"
                 element={<Item getItemFrom={this.getItemFrom} />}
               />
               <Route index element={<Category getCategory={this.getCategory} />} />

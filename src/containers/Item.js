@@ -11,20 +11,25 @@ import { MEDIA_BASE_URI } from '../shared/consts';
 const iconSize = 40;
 
 function Item({ getItemFrom = () => ({}) }) {
-  const { categoryId, itemId } = useParams();
+  const { categoryId, itemId, subCategoryId } = useParams();
   const id = Number(itemId);
-  const data = useMemo(() => getItemFrom(categoryId, itemId), [categoryId, itemId]);
+  const data = useMemo(
+    () => getItemFrom(categoryId, itemId, subCategoryId),
+    [categoryId, itemId, subCategoryId]
+  );
   if (!data.media) {
     return <div>Not found!</div>;
   }
 
   const totalItems = data.totalItems || 0;
 
+  const baseUri = `/category/${categoryId}${subCategoryId ? `/${subCategoryId}` : ''}`;
+
   return (
     <div className="w-full h-full flex flex-row justify-between items-center">
       <div className="h-full w-40 p-4">
         {id > 0 ? (
-          <GotoItemLink to={`/category/${categoryId}/item/${id - 1}`}>
+          <GotoItemLink to={`${baseUri}/item/${id - 1}`}>
             <PreviousIcon size={iconSize} />
           </GotoItemLink>
         ) : null}
@@ -44,7 +49,7 @@ function Item({ getItemFrom = () => ({}) }) {
       </div>
       <div className="h-full w-40 p-4">
         {id < (totalItems - 1) ? (
-          <GotoItemLink to={`/category/${categoryId}/item/${id + 1}`}>
+          <GotoItemLink to={`${baseUri}/item/${id + 1}`}>
             <NextIcon size={iconSize} />
           </GotoItemLink>
         ) : null}
