@@ -4,43 +4,72 @@
       "title": "equalisers",
       "id": "equalisers",
       "frontImg": "img/Screen Shot 2022-04-08 at 2.41.33 pm.png",
-      "items": [
+      "categories": [
         {
-          "title": "Bettermaker EQ232D",
-          "body": "Developed by Brainworx",
-          "id": "bettermakerEQ232D",
+          "title": "Analog modelled EQs",
+          "id": "analogEq",
+          "body": "",
           "frontImg": "img/Screen Shot 2022-04-08 at 2.39.00 pm.png",
-          "media": [
-            "img/Screen Shot 2022-04-08 at 2.39.00 pm.png"
+          "items": [
+            {
+              "title": "Bettermaker EQ232D",
+              "body": "Developed by Brainworx",
+              "id": "bettermakerEQ232D",
+              "frontImg": "img/Screen Shot 2022-04-08 at 2.39.00 pm.png",
+              "media": [
+                "img/Screen Shot 2022-04-08 at 2.39.00 pm.png"
+              ]
+            },
+            {
+              "title": "Acustica Gold 4 EQ",
+              "body": "Magnifique Neve modelled EQ",
+              "id": "gold4EQ",
+              "frontImg": "img/Screen Shot 2022-04-08 at 2.41.33 pm.png",
+              "media": [
+                "img/Screen Shot 2022-04-08 at 2.41.33 pm.png"
+              ]
+            },
+            {
+              "title": "Lindell TE-100",
+              "body": "It's pretty good",
+              "id": "te100",
+              "frontImg": "img/Screen Shot 2022-04-08 at 2.42.13 pm.png",
+              "media": [
+                "img/Screen Shot 2022-04-08 at 2.42.13 pm.png"
+              ]
+            },
+            {
+              "title": "Acustica Magenta 5",
+              "body": "Manley labs modelled EQ",
+              "id": "magenta5",
+              "frontImg": "img/Screen Shot 2022-04-08 at 2.42.44 pm.png",
+              "media": [
+                "img/Screen Shot 2022-04-08 at 2.42.44 pm.png"
+              ]
+            },
+            {
+              "title": "Acustica Taupe EQ",
+              "body": "EQ Module from the Taupe suite",
+              "id": "taupeEq",
+              "frontImg": "img/Screen Shot 2022-04-08 at 2.43.59 pm.png",
+              "media": [
+                "img/Screen Shot 2022-04-08 at 2.43.59 pm.png"
+              ]
+            },
+            {
+              "title": "Dangerous BAX EQ",
+              "body": "Developed by Brainworx",
+              "id": "baxEq",
+              "frontImg": "img/Screen Shot 2022-04-08 at 2.39.49 pm.png",
+              "media": [
+                "img/Screen Shot 2022-04-08 at 2.39.49 pm.png"
+              ]
+            }
           ]
-        },
-        {
-          "title": "Acustica Gold 4 EQ",
-          "body": "Magnifique Neve modelled EQ",
-          "id": "gold4EQ",
-          "frontImg": "img/Screen Shot 2022-04-08 at 2.41.33 pm.png",
-          "media": [
-            "img/Screen Shot 2022-04-08 at 2.41.33 pm.png"
-          ]
-        },
-        {
-          "title": "Lindell TE-100",
-          "body": "It's pretty good",
-          "id": "te100",
-          "frontImg": "img/Screen Shot 2022-04-08 at 2.42.13 pm.png",
-          "media": [
-            "img/Screen Shot 2022-04-08 at 2.42.13 pm.png"
-          ]
-        },
-        {
-          "title": "Acustica Magenta 5",
-          "body": "Manley labs modelled EQ",
-          "id": "magenta5",
-          "frontImg": "img/Screen Shot 2022-04-08 at 2.42.44 pm.png",
-          "media": [
-            "img/Screen Shot 2022-04-08 at 2.42.44 pm.png"
-          ]
-        },
+        }
+      ],
+      "items": [
+        
         {
           "title": "FabFilter Pro-Q 3",
           "body": "Most lovely digital parametric EQ",
@@ -51,30 +80,12 @@
           ]
         },
         {
-          "title": "Acustica Taupe EQ",
-          "body": "EQ Module from the Taupe suite",
-          "id": "taupeEq",
-          "frontImg": "img/Screen Shot 2022-04-08 at 2.43.59 pm.png",
-          "media": [
-            "img/Screen Shot 2022-04-08 at 2.43.59 pm.png"
-          ]
-        },
-        {
           "title": "Tokyo Dawn Labs SlickEQ Mastering Edition",
           "body": "Good and cheap.",
           "id": "slickEqME",
           "frontImg": "img/Screen Shot 2022-04-08 at 2.44.15 pm.png",
           "media": [
             "img/Screen Shot 2022-04-08 at 2.44.15 pm.png"
-          ]
-        },
-        {
-          "title": "Dangerous BAX EQ",
-          "body": "Developed by Brainworx",
-          "id": "baxEq",
-          "frontImg": "img/Screen Shot 2022-04-08 at 2.39.49 pm.png",
-          "media": [
-            "img/Screen Shot 2022-04-08 at 2.39.49 pm.png"
           ]
         }
       ]

@@ -45,6 +45,6 @@ export function getCategoryItem(categoryId, itemId) {
  * @returns {Promise}
  */
 export function populateData() {
-  return getCategories();
-  // return Promise.resolve(dataset.categories);
+  // return getCategories();
+  return Promise.resolve(dataset.categories);
 }

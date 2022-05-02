@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unused-class-component-methods */
 /* eslint-disable react/no-unused-state */
 import { Route, Routes } from 'react-router-dom';
 import { BiHome as HomeIcon, BiArrowBack as BackIcon } from 'react-icons/bi';
 import { Component } from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import OuterContainer from './components/OuterContainer';
 import Home from './containers/Home';
 import { populateData } from './data';
@@ -11,6 +13,8 @@ import Navbar from './components/Navbar';
 import NavbarLink from './components/NavbarLink';
 import Item from './containers/Item';
 import BackToCategoryButton from './components/BackToCategoryButton';
+import withRouter from './util/withRouter';
+import AppRoutes from './containers/AppRoutes';
 
 // console.log(dataset.categories);
 
@@ -19,6 +23,7 @@ import BackToCategoryButton from './components/BackToCategoryButton';
 class App extends Component {
   constructor(props) {
     super(props);
+    // console.log(props);
     this.state = {
       categories: [],
       isLoaded: false,
@@ -31,13 +36,13 @@ class App extends Component {
   componentDidMount() {
     populateData()
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         this.setState({
           categories: result,
           isLoaded: true
         });
-      })
-      .then(() => console.log(this.state));
+      });
+    // .then(() => console.log(this.state));
   }
 
   getCategory(categoryId, subCategoryId = null) {
@@ -77,6 +82,14 @@ class App extends Component {
           <NavbarLink to="/"><HomeIcon size={64} /></NavbarLink>
           <Routes>
             <Route
+              path="/category/:categoryId/:subCategoryId"
+              element={<BackToCategoryButton noSub />}
+            />
+            <Route
+              path="/category/:categoryId/:subCategoryId/item/:itemId"
+              element={<BackToCategoryButton />}
+            />
+            <Route
               path="/category/:categoryId/item/:itemId"
               element={<BackToCategoryButton />}
             />
@@ -86,27 +99,15 @@ class App extends Component {
         {!this.state.isLoaded ? (
           <div>Loading data...</div>
         ) : (
-          <Routes>
-            <Route path="/" element={<Home categories={data} />} />
-            <Route
-              path="/category/:categoryId"
-            >
-              <Route
-                path="item/:itemId"
-                element={<Item getItemFrom={this.getItemFrom} />}
-              />
-              <Route path=":subCategoryId" element={<Category getCategory={this.getCategory} />} />
-              <Route
-                path=":subCategoryId/item/:itemId"
-                element={<Item getItemFrom={this.getItemFrom} />}
-              />
-              <Route index element={<Category getCategory={this.getCategory} />} />
-            </Route>
-          </Routes>
+          <AppRoutes
+            data={data}
+            getCategory={this.getCategory}
+            getItemFrom={this.getItemFrom}
+          />
         )}
       </OuterContainer>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
