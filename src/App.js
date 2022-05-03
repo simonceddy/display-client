@@ -99,11 +99,13 @@ class App extends Component {
         {!this.state.isLoaded ? (
           <div>Loading data...</div>
         ) : (
-          <AppRoutes
-            data={data}
-            getCategory={this.getCategory}
-            getItemFrom={this.getItemFrom}
-          />
+          <div className="relative w-full h-full">
+            <AppRoutes
+              data={data}
+              getCategory={this.getCategory}
+              getItemFrom={this.getItemFrom}
+            />
+          </div>
         )}
       </OuterContainer>
     );

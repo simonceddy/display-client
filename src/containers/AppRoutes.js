@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+// import { useRef } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Category from './Category';
@@ -7,11 +7,11 @@ import Item from './Item';
 
 function AppRoutes({ getCategory, getItemFrom, data }) {
   const location = useLocation();
-  const nodeRef = useRef(null);
+  // const nodeRef = useRef(null);
 
   return (
     <TransitionGroup component={null}>
-      <CSSTransition nodeRef={nodeRef} key={location.key} classNames="fade" timeout={500}>
+      <CSSTransition key={location.key} classNames="fade" timeout={500}>
         <Routes>
           <Route path="/" element={<Home categories={data} />} />
           <Route
