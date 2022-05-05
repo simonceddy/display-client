@@ -1,29 +1,17 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/no-unused-class-component-methods */
-/* eslint-disable react/no-unused-state */
 import { Route, Routes } from 'react-router-dom';
 import { BiHome as HomeIcon, BiArrowBack as BackIcon } from 'react-icons/bi';
 import { Component } from 'react';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import OuterContainer from './components/OuterContainer';
-import Home from './containers/Home';
 import { populateData } from './data';
-import Category from './containers/Category';
 import Navbar from './components/Navbar';
 import NavbarLink from './components/NavbarLink';
-import Item from './containers/Item';
 import BackToCategoryButton from './components/BackToCategoryButton';
 import withRouter from './util/withRouter';
 import AppRoutes from './containers/AppRoutes';
 
-// console.log(dataset.categories);
-
-// const categories = Object.values(populateData());
-
 class App extends Component {
   constructor(props) {
     super(props);
-    // console.log(props);
     this.state = {
       categories: [],
       isLoaded: false,
@@ -36,17 +24,14 @@ class App extends Component {
   componentDidMount() {
     populateData()
       .then((result) => {
-        // console.log(result);
         this.setState({
           categories: result,
           isLoaded: true
         });
       });
-    // .then(() => console.log(this.state));
   }
 
   getCategory(categoryId, subCategoryId = null) {
-    // console.log(categoryId, this.state);
     const c = this.state.categories[categoryId] ? {
       ...this.state.categories[categoryId],
       totalItems: this.state.categories[categoryId].items
@@ -64,7 +49,6 @@ class App extends Component {
 
   getItemFrom(categoryId, itemId, subCategoryId = null) {
     const c = this.getCategory(categoryId, subCategoryId);
-    // console.log(c, this.state);
     if (!c) {
       console.log(categoryId, itemId);
       return false;
