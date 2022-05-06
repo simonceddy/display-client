@@ -41,7 +41,12 @@ class App extends Component {
 
     if (subCategoryId && c.categories) {
       const subC = c.categories.find((s) => (s.id === subCategoryId));
-      return subC;
+      return {
+        ...subC,
+        totalItems: subC.items
+          ? subC.items.length
+          : 0
+      };
     }
 
     return c;

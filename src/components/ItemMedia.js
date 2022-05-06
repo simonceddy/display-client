@@ -10,7 +10,16 @@ const getMediaElement = (type) => {
   switch (type) {
     case 'image':
       return function ({ src, alt }) {
-        return <img src={src} alt={alt} width={900} />;
+        return (
+          <img
+            src={src}
+            alt={alt}
+            style={{
+              width: 'auto',
+              maxHeight: '70vh'
+            }}
+          />
+        );
       };
     case 'video':
       return function ({ src, alt }) {
@@ -19,7 +28,7 @@ const getMediaElement = (type) => {
             controls
             autoPlay
             style={{
-              maxHeight: '800px',
+              maxHeight: '70vh',
               width: 'auto'
             }}
             src={src}
