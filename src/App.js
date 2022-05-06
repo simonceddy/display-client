@@ -8,6 +8,7 @@ import NavbarLink from './components/NavbarLink';
 import BackToCategoryButton from './components/BackToCategoryButton';
 import withRouter from './util/withRouter';
 import AppRoutes from './containers/AppRoutes';
+import preloadImg from './util/preloadImg';
 
 class App extends Component {
   constructor(props) {
@@ -26,8 +27,30 @@ class App extends Component {
       .then((result) => {
         this.setState({
           categories: result,
-          isLoaded: true
         });
+      })
+      .then(async () => {
+        const items = [];
+        const pushItem = (obj) => {
+          if (obj.frontImg) items.push(preloadImg(obj.frontImg));
+        };
+        Object.values(this.state.categories).map((c) => {
+          pushItem(c);
+          if (c.items) {
+            c.items.map((i) => {
+              pushItem(i);
+              return i;
+            });
+          }
+          return c;
+        });
+
+        await Promise.all(items).then(() => {
+          this.setState({
+            isLoaded: true
+          });
+        })
+          .catch(console.error);
       });
   }
 

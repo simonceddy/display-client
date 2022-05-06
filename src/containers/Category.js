@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import FlexboxLink from '../components/FlexboxLink';
 // import TransitionContainer from '../components/TransitionContainer';
-import useImagePreloader from '../hooks/useImagePreloader';
+// import useImagePreloader from '../hooks/useImagePreloader';
 import { MEDIA_BASE_URI } from '../shared/consts';
 
 function Category({ getCategory = () => ({}) }) {
@@ -12,18 +12,18 @@ function Category({ getCategory = () => ({}) }) {
     return <div>Not found!</div>;
   }
 
-  const itemList = [...data.items, ...data.categories || []];
-  console.log(itemList);
+  // const itemList = [...data.items, ...data.categories || []];
+  // console.log(itemList);
 
-  const { imagesPreloaded } = useImagePreloader(itemList.map((i) => i.frontImg));
+  // const { imagesPreloaded } = useImagePreloader(itemList.map((i) => i.frontImg));
 
-  if (!imagesPreloaded) {
-    return (
-      <div>
-        Loading media...
-      </div>
-    );
-  }
+  // if (!imagesPreloaded) {
+  //   return (
+  //     <div>
+  //       Loading media...
+  //     </div>
+  //   );
+  // }
 
   const baseUri = `/category/${categoryId}${subCategoryId ? `/${subCategoryId}` : ''}`;
 

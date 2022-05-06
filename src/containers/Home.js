@@ -1,19 +1,19 @@
 /* eslint-disable no-unused-vars */
 import FlexboxLink from '../components/FlexboxLink';
 // import TransitionContainer from '../components/TransitionContainer';
-import useImagePreloader from '../hooks/useImagePreloader';
+// import useImagePreloader from '../hooks/useImagePreloader';
 import { MEDIA_BASE_URI } from '../shared/consts';
 
 function Home({ categories = [] }) {
-  const { imagesPreloaded } = useImagePreloader(categories.map((c) => c.frontImg));
+  // const { imagesPreloaded } = useImagePreloader(categories.map((c) => c.frontImg));
 
-  if (!imagesPreloaded) {
-    return (
-      <div>
-        Loading media...
-      </div>
-    );
-  }
+  // if (!imagesPreloaded) {
+  //   return (
+  //     <div>
+  //       Loading media...
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="flex flex-row flex-wrap w-full p-2">
