@@ -10,6 +10,16 @@ import withRouter from './util/withRouter';
 import AppRoutes from './containers/AppRoutes';
 import preloadImg from './util/preloadImg';
 
+function preloadCategory(c, cb = () => {}) {
+  if (c.frontImg) cb(c.frontImg);
+  if (c.items) {
+    c.items.map((i) => cb(i));
+  }
+  if (c.categories && c.categories.map) {
+    c.categories.map((sc) => preloadCategory(sc, cb));
+  }
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -34,18 +44,10 @@ class App extends Component {
         const pushItem = (obj) => {
           if (obj.frontImg) items.push(preloadImg(obj.frontImg));
         };
-        Object.values(this.state.categories).map((c) => {
-          pushItem(c);
-          if (c.items) {
-            c.items.map((i) => {
-              pushItem(i);
-              return i;
-            });
-          }
-          return c;
-        });
+        Object.values(this.state.categories).map((c) => preloadCategory(c, pushItem));
 
         await Promise.all(items).then(() => {
+          console.log('finished preloading');
           this.setState({
             isLoaded: true
           });
