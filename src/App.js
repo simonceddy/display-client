@@ -40,11 +40,15 @@ class App extends Component {
         });
       })
       .then(async () => {
+        // TODO fix preloading - embed into data structure after fetch?
+        // TODO handle preloading for audio and video
         const items = [];
         const pushItem = (obj) => {
           if (obj.frontImg) items.push(preloadImg(obj.frontImg));
         };
-        Object.values(this.state.categories).map((c) => preloadCategory(c, pushItem));
+        await Promise.all(Object.values(this.state.categories)
+          .map((c) => preloadCategory(c, pushItem)))
+          .then(() => console.log(items));
 
         await Promise.all(items).then(() => {
           console.log('finished preloading');

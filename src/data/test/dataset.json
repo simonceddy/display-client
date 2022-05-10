@@ -57,6 +57,15 @@
               ]
             },
             {
+              "title": "Soundtoys Sie-Q",
+              "body": "Simple and saucy EQ from almighty great Soundtoys.",
+              "id": "sieQ",
+              "frontImg": "img/Screen Shot 2021-08-29 at 11.31.31 pm.png",
+              "media": [
+                "img/Screen Shot 2021-08-29 at 11.31.31 pm.png"
+              ]
+            },
+            {
               "title": "Dangerous BAX EQ",
               "body": "Developed by Brainworx",
               "id": "baxEq",
@@ -107,6 +116,15 @@
               "frontImg": "img/Screen Shot 2022-04-08 at 2.46.33 pm.png",
               "media":[
                 "img/Screen Shot 2022-04-08 at 2.46.33 pm.png"
+              ]
+            },
+            {
+              "title": "Acustica Taupe Compressor",
+              "body": "Blissimus!",
+              "id": "taupeCompressor",
+              "frontImg": "img/Screen Shot 2022-04-08 at 2.47.20 pm.png",
+              "media":[
+                "img/Screen Shot 2022-04-08 at 2.47.20 pm.png"
               ]
             },
             {
@@ -221,6 +239,15 @@
           "media":[
             "img/Screen Shot 2022-04-08 at 2.47.03 pm.png"
           ]
+        },
+        {
+          "title": "Tokyo Dawn Labs Limiter No6 GE",
+          "body": "Really good and really cheap at all.",
+          "id": "tdrLimiterNo6",
+          "frontImg": "img/Screen Shot 2022-04-08 at 2.46.49 pm.png",
+          "media":[
+            "img/Screen Shot 2022-04-08 at 2.46.49 pm.png"
+          ]
         }
         
       ]
@@ -302,6 +329,58 @@
                 "img/Screen Shot 2022-04-08 at 3.19.50 pm.png"
               ],
               "body": "High quality modular multi-effect with precise modulation control."
+            },
+            {
+              "title": "KiloHearts Snap Heap",
+              "id": "snapHeap",
+              "frontImg": "img/Screen Shot 2022-04-08 at 3.18.17 pm.png",
+              "media": [
+                "img/Screen Shot 2022-04-08 at 3.18.17 pm.png"
+              ],
+              "body": "Modular multi-effect host plugin for KiloHearts' snap-in style effects. Current loaded patch is a trio of parallel band pass filters."
+            }
+          ]
+        },
+        {
+          "title": "Glitch and Unusual Effects",
+          "id": "glitcheffects",
+          "frontImg": "img/cryo.png",
+          "items": [
+            {
+              "title": "Glitchmachines Cryogen",
+              "id": "cryo",
+              "frontImg": "img/cryo.png",
+              "media": [
+                "img/cryo.png"
+              ],
+              "body": "Glitchy delay and filter bank with heaps of modulation."
+            },
+            {
+              "title": "DestroyFX Buffer Override",
+              "id": "bufferOverride",
+              "frontImg": "img/Screen Shot 2022-04-08 at 3.15.59 pm.png",
+              "media": [
+                "img/Screen Shot 2022-04-08 at 3.15.59 pm.png"
+              ],
+              "body": "A glitchy and wonderful free glitch effect."
+            },
+            {
+              "title": "Freakshow Industries Dumpster Fire",
+              "id": "dumpsterFire",
+              "frontImg": "img/Screen Shot 2022-04-08 at 3.04.21 pm.png",
+              "media": [
+                "img/Screen Shot 2022-04-08 at 3.04.21 pm.png"
+              ],
+              "body": "It's a weird pitch shifting effect with no helpful controls."
+            },
+            {
+              "title": "Unfiltered Audio Silo",
+              "id": "silo",
+              "frontImg": "img/Screen Shot 2022-04-08 at 3.12.34 pm.png",
+              "media": [
+                "img/Screen Shot 2022-04-08 at 3.12.34 pm.png"
+              ],
+              "body": "Flexible granular effect."
             }
           ]
         }
@@ -316,28 +395,24 @@
           ],
           "body": "Modelled from a popular Roland effect rack."
         },
-        
-        
         {
-          "title": "Freakshow Industries Dumpster Fire",
-          "id": "dumpsterFire",
-          "frontImg": "img/Screen Shot 2022-04-08 at 3.04.21 pm.png",
+          "title": "Eventide Quadravox",
+          "id": "quadravox",
+          "frontImg": "img/Screen Shot 2022-04-08 at 3.07.02 pm.png",
           "media": [
-            "img/Screen Shot 2022-04-08 at 3.04.21 pm.png"
+            "img/Screen Shot 2022-04-08 at 3.07.02 pm.png"
           ],
-          "body": "It's a weird pitch shifting effect with no helpful controls."
+          "body": "Four voice harmonizer and delay effect."
         },
-        
         {
-          "title": "Unfiltered Audio Silo",
-          "id": "silo",
-          "frontImg": "img/Screen Shot 2022-04-08 at 3.12.34 pm.png",
+          "title": "Acon Digital Multiply",
+          "id": "aconMultiply",
+          "frontImg": "img/Screen Shot 2021-07-31 at 10.26.33 pm.png",
           "media": [
-            "img/Screen Shot 2022-04-08 at 3.12.34 pm.png"
+            "img/Screen Shot 2021-07-31 at 10.26.33 pm.png"
           ],
-          "body": "Flexible granular effect."
+          "body": "Good and flexible free chorus/modulation effect."
         }
-        
       ]
     },
     "synthesisers": {
@@ -475,6 +550,15 @@
                 "img/Screen Shot 2022-04-08 at 2.59.28 pm.png"
               ],
               "body": "Very nifty little crunch plugin with good colouring features."
+            },
+            {
+              "title": "AudioThing Valves",
+              "id": "audioThingValves",
+              "frontImg": "img/Screen Shot 2022-04-08 at 2.58.34 pm.png",
+              "media": [
+                "img/Screen Shot 2022-04-08 at 2.58.34 pm.png"
+              ],
+              "body": "Quite true valve saturation plugin."
             }
           ]
         }
@@ -561,15 +645,6 @@
             "img/Screen Shot 2022-04-08 at 3.23.07 pm.png"
           ],
           "body": "Feature rich frequency analysis and monitoring utility."
-        },
-        {
-          "title": "DestroyFX Buffer Override",
-          "id": "bufferOverride",
-          "frontImg": "img/Screen Shot 2022-04-08 at 3.15.59 pm.png",
-          "media": [
-            "img/Screen Shot 2022-04-08 at 3.15.59 pm.png"
-          ],
-          "body": "A glitchy and wonderful free glitch effect."
         }
       ]
     }

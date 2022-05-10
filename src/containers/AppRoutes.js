@@ -10,6 +10,7 @@ function AppRoutes({ getCategory, getItemFrom, data }) {
   const location = useLocation();
   const nodeRef = useRef(null);
 
+  // TODO fix transitions for routes - use key
   return (
     <TransitionGroup component={null}>
       <CSSTransition nodeRef={nodeRef} key={location.key} classNames="fade" timeout={500}>
