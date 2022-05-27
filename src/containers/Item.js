@@ -27,15 +27,15 @@ function Item({ getItemFrom = () => ({}) }) {
 
   return (
     <div className="w-full h-full flex flex-row justify-between items-center">
-      <div className="h-full w-40 p-4">
+      <div className="h-full flex flex-col justify-center items-start w-40 p-4">
         {id > 0 ? (
-          <GotoItemLink to={`${baseUri}/item/${id - 1}`}>
+          <GotoItemLink className="h-full w-4/5 rounded-md p-2 items-start flex flex-col justify-center" to={`${baseUri}/item/${id - 1}`}>
             <PreviousIcon size={iconSize} />
           </GotoItemLink>
         ) : null}
       </div>
       <div className="flex-1 flex flex-col w-full h-full justify-start items-center">
-        <h2 className="text-4xl">
+        <h2 className="text-4xl capitalize">
           {data.title}
         </h2>
         <div className="">
@@ -47,9 +47,12 @@ function Item({ getItemFrom = () => ({}) }) {
           {data.body}
         </div>
       </div>
-      <div className="h-full w-40 p-4">
+      <div className="h-full flex flex-col justify-center items-end w-40 p-4">
         {id < (totalItems - 1) ? (
-          <GotoItemLink to={`${baseUri}/item/${id + 1}`}>
+          <GotoItemLink
+            className="h-full w-4/5 rounded-md p-2 items-end flex flex-col justify-center"
+            to={`${baseUri}/item/${id + 1}`}
+          >
             <NextIcon size={iconSize} />
           </GotoItemLink>
         ) : null}

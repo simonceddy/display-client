@@ -29,7 +29,7 @@ function Category({ getCategory = () => ({}) }) {
 
   return (
     <div className="flex flex-col justify-start items-center">
-      <h2 className="text-4xl">
+      <h2 className="text-4xl capitalize">
         {data.title}
       </h2>
       <div className="flex flex-row flex-wrap w-full">

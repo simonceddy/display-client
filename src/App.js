@@ -98,6 +98,7 @@ class App extends Component {
       <OuterContainer>
         <Navbar>
           <NavbarLink to="/"><HomeIcon size={64} /></NavbarLink>
+          <NavbarLink to={-1}><BackIcon size={64} /></NavbarLink>
           <Routes>
             <Route
               path="/category/:categoryId/:subCategoryId"
@@ -112,7 +113,6 @@ class App extends Component {
               element={<BackToCategoryButton />}
             />
           </Routes>
-          <NavbarLink to={-1}><BackIcon size={64} /></NavbarLink>
         </Navbar>
         {!this.state.isLoaded ? (
           <div>Loading data...</div>

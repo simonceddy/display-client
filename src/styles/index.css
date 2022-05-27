@@ -17,3 +17,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+lexbox-item {
+  flex: 1 1 140px;
+}
+
+@media (min-width: 640px) {
+  .flexbox-item {
+    flex: 1 1 200px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .flexbox-item {
+    flex: 1 1 250px;
+  }
+}
