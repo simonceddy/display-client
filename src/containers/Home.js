@@ -24,14 +24,14 @@ function Home({ categories = [] }) {
           to={`/category/${id}`}
           key={`category-box-${id}`}
         >
-          {frontImg ? (
+          {frontImg && frontImg.src ? (
             <img
               style={{
                 maxHeight: '200px',
                 maxWidth: '100%'
               }}
-              src={`${MEDIA_BASE_URI}${frontImg}`}
-              alt={title}
+              src={`${MEDIA_BASE_URI}${frontImg.src}`}
+              alt={frontImg.alt || title}
             />
           ) : null}
           <h2 className="text-xl font-bold mb-2 capitalize">{title}</h2>

@@ -38,14 +38,14 @@ function Category({ getCategory = () => ({}) }) {
             to={`${baseUri}/item/${key}`}
             key={`item-box-${key}`}
           >
-            {item.frontImg ? (
+            {item.frontImg && item.frontImg.src ? (
               <img
                 style={{
                   maxHeight: '200px',
                   width: 'auto'
                 }}
-                src={`${MEDIA_BASE_URI}${item.frontImg}`}
-                alt={item.title}
+                src={`${MEDIA_BASE_URI}${item.frontImg.src}`}
+                alt={item.frontImg.alt || item.title}
               />
             ) : null}
             <h2 className="text-xl font-bold mb-2 capitalize">{item.title}</h2>
@@ -56,14 +56,14 @@ function Category({ getCategory = () => ({}) }) {
             to={`/category/${categoryId}/${id}`}
             key={`item-box-${id}`}
           >
-            {frontImg ? (
+            {frontImg && frontImg.src ? (
               <img
                 style={{
                   maxHeight: '200px',
                   width: 'auto'
                 }}
-                src={`${MEDIA_BASE_URI}${frontImg}`}
-                alt={title}
+                src={`${MEDIA_BASE_URI}${frontImg.src}`}
+                alt={frontImg.alt || title}
               />
             ) : null}
             <h2 className="text-xl font-bold mb-2 capitalize">{title}</h2>

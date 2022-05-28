@@ -39,9 +39,13 @@ function Item({ getItemFrom = () => ({}) }) {
           {data.title}
         </h2>
         <div className="">
-          {!data.media[0] ? null : (
-            <ItemMedia src={`${MEDIA_BASE_URI}${data.media[0]}`} alt={data.title} type="image" />
-          )}
+          {data.media[0] && data.media[0].src ? (
+            <ItemMedia
+              src={`${MEDIA_BASE_URI}${data.media[0].src}`}
+              alt={data.media[0].src || data.title}
+              type={data.media[0].type || 'image'}
+            />
+          ) : null}
         </div>
         <div className="text-green-200 p-4 text-xl flex-1">
           {data.body}
