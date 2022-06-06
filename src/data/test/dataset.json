@@ -67,7 +67,7 @@
             },
             {
               "title": "Dangerous BAX EQ",
-              "body": "Developed by Brainworx",
+              "body": "Licensed emulation of a Baxandall EQ rack unit. Developed by Brainworx",
               "id": "baxEq",
               "frontImg": {"src":"img/Screen Shot 2022-04-08 at 2.39.49 pm.png"},
               "media": [
@@ -448,6 +448,15 @@
               "body": "Modelled on a famous Moog model."
             },
             {
+              "title": "Brainworx bx_oberhausen",
+              "id": "bxOberhausen",
+              "frontImg": {"src":"img/Screen Shot 2022-04-08 at 3.24.35 pm.png"},
+              "media": [
+                { "src": "img/Screen Shot 2022-04-08 at 3.24.35 pm.png" }
+              ],
+              "body": "Oberheim emulation. Like OB-Xd but with less features and better sound."
+            },
+            {
               "title": "Lennar Digital Sylenth1",
               "id": "sylenth1",
               "frontImg": {"src":"img/Screen Shot 2022-04-08 at 3.30.06 pm.png"},
@@ -455,6 +464,41 @@
                 { "src": "img/Screen Shot 2022-04-08 at 3.30.06 pm.png" }
               ],
               "body": "A widely used synth plugin. This image shows Sylenth1 with a custom skin."
+            }
+          ]
+        },
+        {
+          "title": "Eurorack Simulators",
+          "id": "eurorack",
+          "frontImg": {"src":"img/Screen Shot 2022-06-02 at 3.41.17 pm.png"},
+          "items": [
+            {
+              "title": "Softube Modular",
+              "id": "softubeModular",
+              "frontImg": {"src":"img/Screen Shot 2022-06-02 at 3.41.17 pm.png"},
+              "media": [
+                { "src": "img/Screen Shot 2022-06-02 at 3.41.17 pm.png"},
+                { "src": "img/Screen Shot 2022-04-08 at 3.26.35 pm.png"}
+              ],
+              "body": "Sounds real and uses heaps of system resources for your benefit."
+            },
+            {
+              "title": "Cherry Audio Voltage Modular",
+              "id": "voltageModular",
+              "frontImg": {"src":"img/Screen Shot 2022-06-02 at 3.42.13 pm.png"},
+              "media": [
+                { "src": "img/Screen Shot 2022-06-02 at 3.42.13 pm.png"}
+              ],
+              "body": "It's the worst of the best but it's still the best."
+            },
+            {
+              "title": "VCV Rack",
+              "id": "vcvRack",
+              "frontImg": {"src":"img/Screen Shot 2022-06-02 at 3.39.10 pm.png"},
+              "media": [
+                { "src": "img/Screen Shot 2022-06-02 at 3.39.10 pm.png"}
+              ],
+              "body": "It's the best."
             }
           ]
         }

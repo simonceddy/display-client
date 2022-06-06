@@ -13,7 +13,10 @@ import preloadImg from './util/preloadImg';
 function preloadCategory(c, cb = () => {}) {
   if (c.frontImg) cb(c.frontImg);
   if (c.items) {
-    c.items.map((i) => cb(i));
+    c.items.map((i) => {
+      if (!i.src) return null;
+      return cb(i.src);
+    });
   }
   if (c.categories && c.categories.map) {
     c.categories.map((sc) => preloadCategory(sc, cb));
