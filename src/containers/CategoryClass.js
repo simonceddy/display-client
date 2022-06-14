@@ -42,13 +42,13 @@ class Category extends Component {
               to={`/category/${this.state.id}/item/${key}`}
               key={`item-box-${key}`}
             >
-              {item.frontImg ? (
+              {item.thumbnail ? (
                 <img
                   style={{
                     maxHeight: '200px',
                     width: 'auto'
                   }}
-                  src={item.frontImg}
+                  src={item.thumbnail}
                   alt={item.title}
                 />
               ) : null}

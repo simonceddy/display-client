@@ -11,7 +11,7 @@ import AppRoutes from './containers/AppRoutes';
 import preloadImg from './util/preloadImg';
 
 function preloadCategory(c, cb = () => {}) {
-  if (c.frontImg) cb(c.frontImg);
+  if (c.thumbnail) cb(c.thumbnail);
   if (c.items) {
     c.items.map((i) => {
       if (!i.src) return null;
@@ -47,7 +47,7 @@ class App extends Component {
         // TODO handle preloading for audio and video
         const items = [];
         const pushItem = (obj) => {
-          if (obj.frontImg) items.push(preloadImg(obj.frontImg));
+          if (obj.thumbnail) items.push(preloadImg(obj.thumbnail));
         };
         await Promise.all(Object.values(this.state.categories)
           .map((c) => preloadCategory(c, pushItem)))

@@ -5,7 +5,7 @@ import FlexboxLink from '../components/FlexboxLink';
 import { MEDIA_BASE_URI } from '../shared/consts';
 
 function Home({ categories = [] }) {
-  // const { imagesPreloaded } = useImagePreloader(categories.map((c) => c.frontImg));
+  // const { imagesPreloaded } = useImagePreloader(categories.map((c) => c.thumbnail));
 
   // if (!imagesPreloaded) {
   //   return (
@@ -18,20 +18,20 @@ function Home({ categories = [] }) {
   return (
     <div className="flex flex-row flex-wrap w-full p-2">
       {categories.map(({
-        title, frontImg, id
+        title, thumbnail, id
       }, index) => (
         <FlexboxLink
           to={`/category/${id}`}
           key={`category-box-${id}`}
         >
-          {frontImg && frontImg.src ? (
+          {thumbnail && thumbnail.src ? (
             <img
               style={{
                 maxHeight: '200px',
                 maxWidth: '100%'
               }}
-              src={`${MEDIA_BASE_URI}${frontImg.src}`}
-              alt={frontImg.alt || title}
+              src={`${MEDIA_BASE_URI}${thumbnail.src}`}
+              alt={thumbnail.alt || title}
             />
           ) : null}
           <h2 className="text-xl font-bold mb-2 capitalize">{title}</h2>

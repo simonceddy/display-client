@@ -15,7 +15,7 @@ function Category({ getCategory = () => ({}) }) {
   // const itemList = [...data.items, ...data.categories || []];
   // console.log(itemList);
 
-  // const { imagesPreloaded } = useImagePreloader(itemList.map((i) => i.frontImg));
+  // const { imagesPreloaded } = useImagePreloader(itemList.map((i) => i.thumbnail));
 
   // if (!imagesPreloaded) {
   //   return (
@@ -38,32 +38,32 @@ function Category({ getCategory = () => ({}) }) {
             to={`${baseUri}/item/${key}`}
             key={`item-box-${key}`}
           >
-            {item.frontImg && item.frontImg.src ? (
+            {item.thumbnail && item.thumbnail.src ? (
               <img
                 style={{
                   maxHeight: '200px',
                   width: 'auto'
                 }}
-                src={`${MEDIA_BASE_URI}${item.frontImg.src}`}
-                alt={item.frontImg.alt || item.title}
+                src={`${MEDIA_BASE_URI}${item.thumbnail.src}`}
+                alt={item.thumbnail.alt || item.title}
               />
             ) : null}
             <h2 className="text-xl font-bold mb-2 capitalize">{item.title}</h2>
           </FlexboxLink>
         )) : null}
-        {data.categories ? data.categories.map(({ id, frontImg, title }) => (
+        {data.categories ? data.categories.map(({ id, thumbnail, title }) => (
           <FlexboxLink
             to={`/category/${categoryId}/${id}`}
             key={`item-box-${id}`}
           >
-            {frontImg && frontImg.src ? (
+            {thumbnail && thumbnail.src ? (
               <img
                 style={{
                   maxHeight: '200px',
                   width: 'auto'
                 }}
-                src={`${MEDIA_BASE_URI}${frontImg.src}`}
-                alt={frontImg.alt || title}
+                src={`${MEDIA_BASE_URI}${thumbnail.src}`}
+                alt={thumbnail.alt || title}
               />
             ) : null}
             <h2 className="text-xl font-bold mb-2 capitalize">{title}</h2>
