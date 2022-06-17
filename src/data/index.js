@@ -4,7 +4,7 @@ export * as dataset from './test/dataset.json';
 
 const req = {
   headers: {
-    'Access-Control-Allow-Origin': 'http://localhost:3030'
+    'Access-Control-Allow-Origin': 'http://localhost:3000'
   }
 };
 
@@ -18,8 +18,11 @@ export function getTotalItemsFor(categoryId) {
 }
 
 export function getCategories() {
-  return fetch('http://localhost:3030/api/', req)
-    .then((res) => res.json())
+  return fetch('http://localhost:3030/api/category', req)
+    .then((res) => {
+      console.log(res);
+      return res.json();
+    })
     .catch(console.error);
   // return dataset.categories;
 }
@@ -45,6 +48,6 @@ export function getCategoryItem(categoryId, itemId) {
  * @returns {Promise}
  */
 export function populateData() {
-  // return getCategories();
-  return Promise.resolve(dataset.categories);
+  return getCategories();
+  // return Promise.resolve(dataset.categories);
 }

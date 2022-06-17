@@ -18,19 +18,20 @@ function Home({ categories = [] }) {
   return (
     <div className="flex flex-row flex-wrap w-full p-2">
       {categories.map(({
-        title, thumbnail, id
+        title, thumbnail, key
       }, index) => (
         <FlexboxLink
-          to={`/category/${id}`}
-          key={`category-box-${id}`}
+          to={`/category/${key}`}
+          key={`category-box-${key}`}
         >
           {thumbnail && thumbnail.src ? (
             <img
+              className="rounded"
               style={{
                 maxHeight: '200px',
                 maxWidth: '100%'
               }}
-              src={`${MEDIA_BASE_URI}${thumbnail.src}`}
+              src={`${MEDIA_BASE_URI}thumbs/${thumbnail.src}`}
               alt={thumbnail.alt || title}
             />
           ) : null}

@@ -38,6 +38,7 @@ class App extends Component {
   componentDidMount() {
     populateData()
       .then((result) => {
+        console.log(result);
         this.setState({
           categories: result,
         });
@@ -64,15 +65,12 @@ class App extends Component {
   }
 
   getCategory(categoryId, subCategoryId = null) {
-    const c = this.state.categories[categoryId] ? {
-      ...this.state.categories[categoryId],
-      totalItems: this.state.categories[categoryId].items
-        ? this.state.categories[categoryId].items.length
-        : 0
-    } : false;
+    const c = this.state.categories.find((cat) => cat.key === categoryId);
+
+    if (!c) return null;
 
     if (subCategoryId && c.categories) {
-      const subC = c.categories.find((s) => (s.id === subCategoryId));
+      const subC = c.categories.find((s) => (s.key === subCategoryId));
       return {
         ...subC,
         totalItems: subC.items
@@ -81,7 +79,7 @@ class App extends Component {
       };
     }
 
-    return c;
+    return { ...c, totalItems: c.items ? c.items.length : 0 };
   }
 
   getItemFrom(categoryId, itemId, subCategoryId = null) {

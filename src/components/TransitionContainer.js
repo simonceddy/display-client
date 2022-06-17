@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { forwardRef } from 'react';
 
 const TransitionContainer = forwardRef((props, ref) => (
-  <div ref={ref} className="w-full h-full absolute">
+  <div ref={ref} {...props} className={`${props.className} w-full h-full`}>
     {props.children}
   </div>
 ));

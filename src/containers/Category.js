@@ -40,29 +40,31 @@ function Category({ getCategory = () => ({}) }) {
           >
             {item.thumbnail && item.thumbnail.src ? (
               <img
+                className="rounded"
                 style={{
                   maxHeight: '200px',
                   width: 'auto'
                 }}
-                src={`${MEDIA_BASE_URI}${item.thumbnail.src}`}
+                src={`${MEDIA_BASE_URI}thumbs/${item.thumbnail.src}`}
                 alt={item.thumbnail.alt || item.title}
               />
             ) : null}
             <h2 className="text-xl font-bold mb-2 capitalize">{item.title}</h2>
           </FlexboxLink>
         )) : null}
-        {data.categories ? data.categories.map(({ id, thumbnail, title }) => (
+        {data.categories ? data.categories.map(({ key, thumbnail, title }) => (
           <FlexboxLink
-            to={`/category/${categoryId}/${id}`}
-            key={`item-box-${id}`}
+            to={`/category/${categoryId}/${key}`}
+            key={`item-box-${key}`}
           >
             {thumbnail && thumbnail.src ? (
               <img
+                className="rounded"
                 style={{
                   maxHeight: '200px',
                   width: 'auto'
                 }}
-                src={`${MEDIA_BASE_URI}${thumbnail.src}`}
+                src={`${MEDIA_BASE_URI}thumbs/${thumbnail.src}`}
                 alt={thumbnail.alt || title}
               />
             ) : null}
