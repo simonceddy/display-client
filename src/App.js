@@ -9,6 +9,8 @@ import BackToCategoryButton from './components/BackToCategoryButton';
 import withRouter from './util/withRouter';
 import AppRoutes from './containers/AppRoutes';
 import preloadImg from './util/preloadImg';
+import ErrorBoundary from './containers/ErrorBoundary';
+import DisplayTitle from './features/DisplayTitle/DisplayTitle';
 
 function preloadCategory(c, cb = () => {}) {
   if (c.thumbnail) cb(c.thumbnail);
@@ -96,37 +98,42 @@ class App extends Component {
     const data = Object.values(this.state.categories);
 
     return (
-      <OuterContainer>
-        <Navbar>
-          <NavbarLink to="/"><HomeIcon size={64} /></NavbarLink>
-          <NavbarLink to={-1}><BackIcon size={64} /></NavbarLink>
-          <Routes>
-            <Route
-              path="/category/:categoryId/:subCategoryId"
-              element={<BackToCategoryButton noSub />}
-            />
-            <Route
-              path="/category/:categoryId/:subCategoryId/item/:itemId"
-              element={<BackToCategoryButton />}
-            />
-            <Route
-              path="/category/:categoryId/item/:itemId"
-              element={<BackToCategoryButton />}
-            />
-          </Routes>
-        </Navbar>
-        {!this.state.isLoaded ? (
-          <div>Loading data...</div>
-        ) : (
-          <div className="relative w-full h-full">
-            <AppRoutes
-              data={data}
-              getCategory={this.getCategory}
-              getItemFrom={this.getItemFrom}
-            />
+      <ErrorBoundary>
+        <OuterContainer>
+          <div className="flex flex-row justify-center items-center w-full">
+            <Navbar>
+              <NavbarLink to="/"><HomeIcon size={64} /></NavbarLink>
+              <NavbarLink to={-1}><BackIcon size={64} /></NavbarLink>
+              <Routes>
+                <Route
+                  path="/category/:categoryId/:subCategoryId"
+                  element={<BackToCategoryButton noSub />}
+                />
+                <Route
+                  path="/category/:categoryId/:subCategoryId/item/:itemId"
+                  element={<BackToCategoryButton />}
+                />
+                <Route
+                  path="/category/:categoryId/item/:itemId"
+                  element={<BackToCategoryButton />}
+                />
+              </Routes>
+            </Navbar>
+            <DisplayTitle />
+            <div className="flex-1" id="title-spacer-div" />
           </div>
-        )}
-      </OuterContainer>
+          {!this.state.isLoaded ? (
+            <div>Loading data...</div>
+          ) : (
+            <div className="relative w-full h-full">
+              <AppRoutes
+                data={data}
+                getItemFrom={this.getItemFrom}
+              />
+            </div>
+          )}
+        </OuterContainer>
+      </ErrorBoundary>
     );
   }
 }

@@ -28,5 +28,6 @@ module.exports = {
     'react/prop-types': 'off',
     'react/no-array-index-key': 'off',
     'react/react-in-jsx-scope': 'off',
+    'no-param-reassign': 'off'
   },
 };

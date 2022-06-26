@@ -1,31 +1,34 @@
-import { useMemo } from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import FlexboxLink from '../components/FlexboxLink';
-// import TransitionContainer from '../components/TransitionContainer';
-// import useImagePreloader from '../hooks/useImagePreloader';
-import { MEDIA_BASE_URI } from '../shared/consts';
+import FlexboxLink from '../../components/FlexboxLink';
+import { useFetchCategoryDataQuery } from '../../services/api';
+import { MEDIA_BASE_URI } from '../../shared/consts';
+import { setDisplayTitle } from '../DisplayTitle/displayTitleSlice';
 
-function Category({ getCategory = () => ({}) }) {
+function Category() {
   const { categoryId, subCategoryId } = useParams();
-  const data = useMemo(() => getCategory(categoryId, subCategoryId), [categoryId, subCategoryId]);
-  if (!data) {
-    return <div>Not found!</div>;
-  }
-
-  // const itemList = [...data.items, ...data.categories || []];
-  // console.log(itemList);
-
-  // const { imagesPreloaded } = useImagePreloader(itemList.map((i) => i.thumbnail));
-
-  // if (!imagesPreloaded) {
-  //   return (
-  //     <div>
-  //       Loading media...
-  //     </div>
-  //   );
-  // }
+  const {
+    data, isLoading, error, isSuccess
+  } = useFetchCategoryDataQuery({
+    key: categoryId,
+    sub: subCategoryId || null
+  });
+  const dispatch = useDispatch();
+  useEffect(() => {
+    let titleSet = false;
+    if (!titleSet && isSuccess) {
+      dispatch(setDisplayTitle(data.title));
+    }
+    return () => {
+      titleSet = true;
+    };
+  }, [isLoading]);
 
   const baseUri = `/category/${categoryId}${subCategoryId ? `/${subCategoryId}` : ''}`;
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
 
   return (
     <div className="flex flex-col justify-start items-center">
@@ -33,23 +36,23 @@ function Category({ getCategory = () => ({}) }) {
         {data.title}
       </h2>
       <div className="flex flex-row flex-wrap w-full">
-        {data.items ? data.items.map((item) => (
+        {data.items ? data.items.map(({ key, thumbnail, title }) => (
           <FlexboxLink
-            to={`${baseUri}/item/${item.key}`}
-            key={`item-box-${item.key}`}
+            to={`${baseUri}/item/${key}`}
+            key={`item-box-${key}`}
           >
-            {item.thumbnail && item.thumbnail.src ? (
+            {thumbnail && thumbnail.src ? (
               <img
                 className="rounded"
                 style={{
                   maxHeight: '200px',
                   width: 'auto'
                 }}
-                src={`${MEDIA_BASE_URI}thumbs/${item.thumbnail.src}`}
-                alt={item.thumbnail.alt || item.title}
+                src={`${MEDIA_BASE_URI}thumbs/${thumbnail.src}`}
+                alt={thumbnail.alt || title}
               />
             ) : null}
-            <h2 className="text-xl font-bold mb-2 capitalize">{item.title}</h2>
+            <h2 className="text-xl font-bold mb-2 capitalize">{title}</h2>
           </FlexboxLink>
         )) : null}
         {data.categories ? data.categories.map(({ key, thumbnail, title }) => (

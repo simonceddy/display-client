@@ -1,10 +1,31 @@
 /* eslint-disable no-unused-vars */
-import FlexboxLink from '../components/FlexboxLink';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import FlexboxLink from '../../components/FlexboxLink';
+import { useFetchHomeDataQuery } from '../../services/api';
 // import TransitionContainer from '../components/TransitionContainer';
 // import useImagePreloader from '../hooks/useImagePreloader';
-import { MEDIA_BASE_URI } from '../shared/consts';
+import { MEDIA_BASE_URI } from '../../shared/consts';
+import { setDisplayTitle } from '../DisplayTitle/displayTitleSlice';
 
-function Home({ categories = [] }) {
+function Homepage() {
+  const {
+    data, isLoading, isSuccess, error
+  } = useFetchHomeDataQuery();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    let titleSet = false;
+    if (!titleSet && isSuccess) {
+      dispatch(setDisplayTitle('Wonthaggi & District Historical Society'));
+    }
+    return () => {
+      titleSet = true;
+    };
+  }, [isLoading]);
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
+
   // const { imagesPreloaded } = useImagePreloader(categories.map((c) => c.thumbnail));
 
   // if (!imagesPreloaded) {
@@ -17,7 +38,7 @@ function Home({ categories = [] }) {
 
   return (
     <div className="flex flex-row flex-wrap justify-evenly items-start w-full p-2">
-      {categories.map(({
+      {data.map(({
         title, thumbnail, key
       }, index) => (
         <FlexboxLink
@@ -44,4 +65,4 @@ function Home({ categories = [] }) {
   );
 }
 
-export default Home;
+export default Homepage;

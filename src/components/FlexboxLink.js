@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 
-function FlexboxLink({ children, to }) {
+function FlexboxLink({ children, to, style }) {
   return (
     <Link
       to={to}
-      className="p-2 m-2 flex flex-col cursor-pointer justify-between items-center hover:underline text-center border-2 rounded-md border-yellow-100 active:border-yellow-200 hover:text-red-300 active:text-yellow-200 hover:border-red-300 flexbox-item"
+      className="py-2 px-3 m-2 flex flex-col cursor-pointer justify-between items-center hover:underline text-center border-2 rounded-md border-yellow-100 active:border-yellow-200 hover:text-red-300 active:text-yellow-200 hover:border-red-300 flexbox-item hover:bg-green-400 bg-opacity-25"
+      style={style}
     >
       {children}
     </Link>

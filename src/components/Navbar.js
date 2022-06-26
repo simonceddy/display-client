@@ -1,6 +1,6 @@
 function Navbar({ children }) {
   return (
-    <div className="w-full p-2 flex flex-row justify-start items-center">
+    <div className="p-2 flex-1 flex flex-row justify-start items-center">
       {children}
     </div>
   );
