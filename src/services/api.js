@@ -29,4 +29,5 @@ export const {
   useFetchHomeDataQuery,
   useFetchCategoryDataQuery,
   useFetchItemDataQuery,
+  usePrefetch,
 } = displayApi;

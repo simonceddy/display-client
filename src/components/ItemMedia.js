@@ -12,11 +12,12 @@ const getMediaElement = (type) => {
       return function ({ src, alt }) {
         return (
           <img
+            className="flex-1"
             src={src}
             alt={alt}
             style={{
-              width: 'auto',
-              maxHeight: '70vh'
+              maxHeight: '78vh',
+              objectFit: 'scale-down'
             }}
           />
         );

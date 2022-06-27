@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import FlexboxLink from '../../components/FlexboxLink';
 import { useFetchCategoryDataQuery } from '../../services/api';
 import { MEDIA_BASE_URI } from '../../shared/consts';
+import { preloadAllMedia } from '../../util/preloadItemMedia';
 import { setDisplayTitle } from '../DisplayTitle/displayTitleSlice';
 
 function Category() {
@@ -15,13 +16,16 @@ function Category() {
     sub: subCategoryId || null
   });
   const dispatch = useDispatch();
+
+  // TODO better preloading - this is mainly testing
   useEffect(() => {
-    let titleSet = false;
-    if (!titleSet && isSuccess) {
+    let preloadDone = false;
+    if (!preloadDone && isSuccess) {
       dispatch(setDisplayTitle(data.title));
+      if (data.items) preloadAllMedia(data.items);
     }
     return () => {
-      titleSet = true;
+      preloadDone = true;
     };
   }, [isLoading]);
 
@@ -30,31 +34,35 @@ function Category() {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
+  const totalFlexItems = (data.items ? data.items.length : 0)
+    + (data.categories ? data.categories.length : 0);
+  console.log(Math.ceil(totalFlexItems / 2));
+
   return (
     <div className="flex flex-col justify-start items-center">
-      <h2 className="text-4xl capitalize">
-        {data.title}
-      </h2>
       <div className="flex flex-row flex-wrap w-full">
-        {data.items ? data.items.map(({ key, thumbnail, title }) => (
-          <FlexboxLink
-            to={`${baseUri}/item/${key}`}
-            key={`item-box-${key}`}
-          >
-            {thumbnail && thumbnail.src ? (
-              <img
-                className="rounded"
-                style={{
-                  maxHeight: '200px',
-                  width: 'auto'
-                }}
-                src={`${MEDIA_BASE_URI}thumbs/${thumbnail.src}`}
-                alt={thumbnail.alt || title}
-              />
-            ) : null}
-            <h2 className="text-xl font-bold mb-2 capitalize">{title}</h2>
-          </FlexboxLink>
-        )) : null}
+        {data.items ? data.items.map(({ key, thumbnail, title }) => {
+          if (!key) console.log(title);
+          return (
+            <FlexboxLink
+              to={`${baseUri}/item/${key}`}
+              key={`item-box-${key}`}
+            >
+              {thumbnail && thumbnail.src ? (
+                <img
+                  className="rounded"
+                  style={{
+                    maxHeight: '200px',
+                    width: 'auto'
+                  }}
+                  src={`${MEDIA_BASE_URI}thumbs/${thumbnail.src}`}
+                  alt={thumbnail.alt || title}
+                />
+              ) : null}
+              <h2 className="text-xl font-bold mb-2 capitalize">{title}</h2>
+            </FlexboxLink>
+          );
+        }) : null}
         {data.categories ? data.categories.map(({ key, thumbnail, title }) => (
           <FlexboxLink
             to={`/category/${categoryId}/${key}`}

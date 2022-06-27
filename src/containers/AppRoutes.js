@@ -2,11 +2,11 @@ import { useRef } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Category from '../features/Category/Category';
-import Home from './Home';
+import Home from '../features/homepage/Homepage';
 import Item from '../features/Item/Item';
 import TransitionContainer from '../components/TransitionContainer';
 
-function AppRoutes({ data }) {
+function AppRoutes() {
   const location = useLocation();
   const nodeRef = useRef(null);
 
@@ -22,7 +22,7 @@ function AppRoutes({ data }) {
       >
         <TransitionContainer ref={nodeRef}>
           <Routes>
-            <Route path="/" element={<Home categories={data} />} />
+            <Route path="/" element={<Home />} />
             <Route
               path="/category/:categoryId"
             >

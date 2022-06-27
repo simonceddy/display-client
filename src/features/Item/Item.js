@@ -35,7 +35,6 @@ function Item() {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
-
   const totalItems = data.totalItems || 0;
 
   const baseUri = `/category/${categoryId}${subCategoryId ? `/${subCategoryId}` : ''}`;
@@ -50,10 +49,7 @@ function Item() {
         ) : null}
       </div>
       <div className="flex-1 flex flex-col w-full h-full justify-start items-center">
-        <h2 className="text-4xl capitalize">
-          {data.title}
-        </h2>
-        <div className="">
+        <div className="flex-1 flex flex-col justify-center items-center">
           {data.media[0] && data.media[0].src ? (
             <ItemMedia
               src={`${MEDIA_BASE_URI}${data.media[0].src}`}
@@ -62,7 +58,7 @@ function Item() {
             />
           ) : null}
         </div>
-        <div className="text-green-200 p-4 text-xl flex-1">
+        <div className="text-green-200 p-4 text-xl">
           {data.body}
         </div>
       </div>
