@@ -4,7 +4,6 @@ import OuterContainer from './components/OuterContainer';
 import Navbar from './components/Navbar';
 import NavbarLink from './components/NavbarLink';
 import BackToCategoryButton from './components/BackToCategoryButton';
-import withRouter from './util/withRouter';
 import AppRoutes from './containers/AppRoutes';
 import ErrorBoundary from './containers/ErrorBoundary';
 import DisplayTitle from './features/DisplayTitle/DisplayTitle';
@@ -40,16 +39,12 @@ function App() {
             <NavbarLink to={-1}><BackIcon size={64} /></NavbarLink>
           </Navbar>
         </div>
-        {/* {!this.state.isLoaded ? (
-          <div>Loading data...</div>
-        ) : ( */}
         <div className="relative w-full h-full">
           <AppRoutes />
         </div>
-        {/* )} */}
       </OuterContainer>
     </ErrorBoundary>
   );
 }
 
-export default withRouter(App);
+export default App;

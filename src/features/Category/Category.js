@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import FlexboxLink from '../../components/FlexboxLink';
 import { useFetchCategoryDataQuery } from '../../services/api';
 import { MEDIA_BASE_URI } from '../../shared/consts';
+import getFlexWidth from '../../util/getFlexWidth';
 import { preloadAllMedia } from '../../util/preloadItemMedia';
 import { setDisplayTitle } from '../DisplayTitle/displayTitleSlice';
 
@@ -36,17 +37,20 @@ function Category() {
 
   const totalFlexItems = (data.items ? data.items.length : 0)
     + (data.categories ? data.categories.length : 0);
-  console.log(Math.ceil(totalFlexItems / 2));
-
+  const flexWidth = getFlexWidth(totalFlexItems);
+  // console.log(flexWidth);
   return (
     <div className="flex flex-col justify-start items-center">
-      <div className="flex flex-row flex-wrap w-full">
+      <div className="flex flex-row flex-wrap w-full justify-around items-center">
         {data.items ? data.items.map(({ key, thumbnail, title }) => {
           if (!key) console.log(title);
           return (
             <FlexboxLink
               to={`${baseUri}/item/${key}`}
               key={`item-box-${key}`}
+              style={{
+                flex: `1 1 ${flexWidth}%`
+              }}
             >
               {thumbnail && thumbnail.src ? (
                 <img
@@ -67,6 +71,9 @@ function Category() {
           <FlexboxLink
             to={`/category/${categoryId}/${key}`}
             key={`item-box-${key}`}
+            style={{
+              flex: `1 1 ${flexWidth}%`
+            }}
           >
             {thumbnail && thumbnail.src ? (
               <img

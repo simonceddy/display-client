@@ -6,6 +6,7 @@ import { useFetchHomeDataQuery } from '../../services/api';
 // import TransitionContainer from '../components/TransitionContainer';
 // import useImagePreloader from '../hooks/useImagePreloader';
 import { MEDIA_BASE_URI } from '../../shared/consts';
+import getFlexWidth from '../../util/getFlexWidth';
 import { setDisplayTitle } from '../DisplayTitle/displayTitleSlice';
 
 function Homepage() {
@@ -26,6 +27,8 @@ function Homepage() {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
+  const flexWidth = getFlexWidth(data.length);
+
   // const { imagesPreloaded } = useImagePreloader(categories.map((c) => c.thumbnail));
 
   // if (!imagesPreloaded) {
@@ -44,6 +47,9 @@ function Homepage() {
         <FlexboxLink
           to={`/category/${key}`}
           key={`category-box-${key}`}
+          style={{
+            flex: `1 1 ${flexWidth}%`
+          }}
         >
           {thumbnail && thumbnail.src ? (
             <img
