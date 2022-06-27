@@ -1,11 +1,8 @@
-/* eslint-disable no-unused-vars */
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import FlexboxLink from '../../components/FlexboxLink';
 import { useFetchHomeDataQuery } from '../../services/api';
-// import TransitionContainer from '../components/TransitionContainer';
-// import useImagePreloader from '../hooks/useImagePreloader';
-import { MEDIA_BASE_URI } from '../../shared/consts';
+import { DISPLAY_DEFAULT_TITLE, MEDIA_BASE_URI } from '../../shared/consts';
 import getFlexWidth from '../../util/getFlexWidth';
 import { setDisplayTitle } from '../DisplayTitle/displayTitleSlice';
 
@@ -17,7 +14,7 @@ function Homepage() {
   useEffect(() => {
     let titleSet = false;
     if (!titleSet && isSuccess) {
-      dispatch(setDisplayTitle('Wonthaggi & District Historical Society'));
+      dispatch(setDisplayTitle(DISPLAY_DEFAULT_TITLE));
     }
     return () => {
       titleSet = true;
@@ -43,7 +40,7 @@ function Homepage() {
     <div className="flex flex-row flex-wrap justify-evenly items-start w-full p-2">
       {data.map(({
         title, thumbnail, key
-      }, index) => (
+      }) => (
         <FlexboxLink
           to={`/category/${key}`}
           key={`category-box-${key}`}

@@ -3,6 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const displayApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3030/api' }),
   reducerPath: 'displayApi',
+  keepUnusedDataFor: 600, // TODO possibly make this much longer
   endpoints: (builder) => ({
     fetchHomeData: builder.query({
       query: () => '/category',

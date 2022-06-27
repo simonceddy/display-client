@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { DISPLAY_DEFAULT_TITLE } from '../../shared/consts';
 
 export const displayTitleSlice = createSlice({
   name: 'displayTitle',
   initialState: {
-    title: ''
+    title: DISPLAY_DEFAULT_TITLE
   },
   reducers: {
     setDisplayTitle(state, action) {

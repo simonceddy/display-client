@@ -58,7 +58,7 @@ function Item() {
             />
           ) : null}
         </div>
-        <div className="text-green-200 p-4 text-xl">
+        <div className="text-green-200 p-4 mb-4 text-xl">
           {data.body}
         </div>
       </div>

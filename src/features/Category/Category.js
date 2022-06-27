@@ -38,7 +38,7 @@ function Category() {
   const totalFlexItems = (data.items ? data.items.length : 0)
     + (data.categories ? data.categories.length : 0);
   const flexWidth = getFlexWidth(totalFlexItems);
-  // console.log(flexWidth);
+
   return (
     <div className="flex flex-col justify-start items-center">
       <div className="flex flex-row flex-wrap w-full justify-around items-center">
