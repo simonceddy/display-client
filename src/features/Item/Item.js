@@ -14,7 +14,6 @@ import { setDisplayTitle } from '../DisplayTitle/displayTitleSlice';
 function Item() {
   const { categoryId, itemId, subCategoryId } = useParams();
   const dispatch = useDispatch();
-  const id = Number(itemId);
   const {
     data, error, isLoading, isSuccess
   } = useFetchItemDataQuery({
@@ -35,15 +34,14 @@ function Item() {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
-  const totalItems = data.totalItems || 0;
 
   const baseUri = `/category/${categoryId}${subCategoryId ? `/${subCategoryId}` : ''}`;
 
   return (
     <div className="w-full h-full flex flex-row justify-between items-center">
       <div className="h-full flex flex-col justify-center items-start w-40 p-4">
-        {id > 0 ? (
-          <GotoItemLink className="h-full w-4/5 rounded-md p-2 items-start flex flex-col justify-center" to={`${baseUri}/item/${id - 1}`}>
+        {data.prev ? (
+          <GotoItemLink className="h-full w-4/5 rounded-md p-2 items-start flex flex-col justify-center" to={`${baseUri}/item/${data.prev}`}>
             <PreviousIcon size={40} />
           </GotoItemLink>
         ) : null}
@@ -63,10 +61,10 @@ function Item() {
         </div>
       </div>
       <div className="h-full flex flex-col justify-center items-end w-40 p-4">
-        {id < (totalItems - 1) ? (
+        {data.next ? (
           <GotoItemLink
             className="h-full w-4/5 rounded-md p-2 items-end flex flex-col justify-center"
-            to={`${baseUri}/item/${id + 1}`}
+            to={`${baseUri}/item/${data.next}`}
           >
             <NextIcon size={40} />
           </GotoItemLink>
