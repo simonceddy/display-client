@@ -39,10 +39,10 @@ function Item() {
 
   return (
     <div className="w-full h-full flex flex-row justify-between items-center">
-      <div className="h-full flex flex-col justify-center items-start w-40 p-4">
+      <div className="h-full flex flex-col justify-center items-start w-32 p-4">
         {data.prev ? (
           <GotoItemLink className="h-full w-4/5 rounded-md p-2 items-start flex flex-col justify-center" to={`${baseUri}/item/${data.prev}`}>
-            <PreviousIcon size={40} />
+            <PreviousIcon size={50} />
           </GotoItemLink>
         ) : null}
       </div>
@@ -60,13 +60,13 @@ function Item() {
           {data.body}
         </div>
       </div>
-      <div className="h-full flex flex-col justify-center items-end w-40 p-4">
+      <div className="h-full flex flex-col justify-center items-end w-32 p-4">
         {data.next ? (
           <GotoItemLink
             className="h-full w-4/5 rounded-md p-2 items-end flex flex-col justify-center"
             to={`${baseUri}/item/${data.next}`}
           >
-            <NextIcon size={40} />
+            <NextIcon size={50} />
           </GotoItemLink>
         ) : null}
       </div>
