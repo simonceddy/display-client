@@ -1,4 +1,8 @@
 /* eslint-disable no-unused-vars */
+
+import VideoControls from './VideoControls';
+import VideoMedia from './VideoMedia';
+
 /* eslint-disable func-names */
 const mediaData = {
   src: null,
@@ -23,19 +27,8 @@ const getMediaElement = (type) => {
         );
       };
     case 'video':
-      return function ({ src, alt }) {
-        return (
-          <video
-            controls
-            autoPlay
-            style={{
-              maxHeight: '70vh',
-              width: 'auto'
-            }}
-            src={src}
-          ><track kind="captions" />
-          </video>
-        );
+      return function ({ src }) {
+        return (<VideoMedia src={src} />);
       };
     case 'audio':
       return function ({ src, alt }) {
