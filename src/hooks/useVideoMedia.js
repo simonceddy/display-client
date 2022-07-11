@@ -1,7 +1,8 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 function useVideoMedia() {
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isFinished, setIsFinished] = useState(false);
   const ref = useRef(null);
 
   const play = () => {
@@ -13,14 +14,21 @@ function useVideoMedia() {
     setIsPlaying(false);
   };
   const stop = () => {
-    if (isPlaying && ref.current) {
-      ref.current.pause();
+    if (ref.current) {
+      if (isPlaying) ref.current.pause();
       ref.current.fastSeek(0);
     }
     setIsPlaying(false);
   };
 
+  useEffect(() => {
+    if (ref) {
+      ref.current.on('ended', () => setIsFinished(true))
+    }
+  }, [ref]);
+
   return {
+    isFinished,
     isPlaying,
     play,
     pause,
