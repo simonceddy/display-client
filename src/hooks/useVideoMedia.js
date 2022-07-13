@@ -22,8 +22,8 @@ function useVideoMedia() {
   };
 
   useEffect(() => {
-    if (ref) {
-      ref.current.on('ended', () => setIsFinished(true))
+    if (ref.current && ref.current.addEventListener) {
+      ref.current.addEventListener('ended', () => setIsFinished(true));
     }
   }, [ref]);
 
