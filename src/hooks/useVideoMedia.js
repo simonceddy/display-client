@@ -7,6 +7,7 @@ function useVideoMedia() {
 
   const play = () => {
     if (!isPlaying && ref.current) ref.current.play();
+    if (isFinished) setIsFinished(false);
     setIsPlaying(true);
   };
   const pause = () => {
@@ -16,7 +17,9 @@ function useVideoMedia() {
   const stop = () => {
     if (ref.current) {
       if (isPlaying) ref.current.pause();
-      ref.current.fastSeek(0);
+      if (ref.current.currentTime) {
+        ref.current.currentTime = 0;
+      }
     }
     setIsPlaying(false);
   };

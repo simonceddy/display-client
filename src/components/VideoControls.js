@@ -1,7 +1,8 @@
 import {
   BiPlayCircle as PlayIcon,
   BiPauseCircle as PauseIcon,
-  BiStopCircle as StopIcon
+  BiStopCircle as StopIcon,
+  BiReset as ReplayIcon,
 } from 'react-icons/bi';
 
 function IconWrapper({ Icon, onClick, size = 40 }) {
@@ -17,7 +18,7 @@ function IconWrapper({ Icon, onClick, size = 40 }) {
 }
 
 function VideoControls({
-  isPlaying = false, onPlay, onPause, onStop, iconSize
+  isPlaying = false, onPlay, onPause, onStop, iconSize, isFinished = false
 }) {
   return (
     <div className="flex flex-row justify-around items-center p-1">
@@ -26,7 +27,11 @@ function VideoControls({
       ) : (
         <IconWrapper Icon={PlayIcon} onClick={onPlay} size={iconSize} />
       )}
-      <IconWrapper Icon={StopIcon} onClick={onStop} size={iconSize} />
+      {isFinished ? (
+        <IconWrapper Icon={ReplayIcon} onClick={onPlay} size={iconSize} />
+      ) : (
+        <IconWrapper Icon={StopIcon} onClick={onStop} size={iconSize} />
+      )}
     </div>
   );
 }

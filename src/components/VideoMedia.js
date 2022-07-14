@@ -3,7 +3,7 @@ import VideoControls from './VideoControls';
 
 function VideoMedia({ src }) {
   const {
-    isPlaying, play, pause, ref, stop
+    isPlaying, play, pause, ref, stop, isFinished
   } = useVideoMedia();
   return (
     <>
@@ -25,6 +25,7 @@ function VideoMedia({ src }) {
         <track kind="captions" />
       </video>
       <VideoControls
+        isFinished={isFinished}
         iconSize={52}
         isPlaying={isPlaying}
         onPlay={play}

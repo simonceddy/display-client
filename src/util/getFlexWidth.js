@@ -1,5 +1,3 @@
-console.log(document);
-
 function getFlexWidth(totalItems = 1) {
   // console.log(totalItems);
   const i = totalItems >= 4 ? Math.ceil(totalItems / 2) : totalItems;
