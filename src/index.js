@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router } from 'react-router-dom';
 import './styles/index.css';
-import './styles/tailwind.css';
+// import './styles/tailwind.css';
+// Bogan polyfilled tailwind to support old chromium
+import './styles/tailwind.old.css';
 import './styles/transitions.css';
 import { Provider } from 'react-redux';
 import App from './App';
