@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.2 | MIT License | https://tailwindcss.com
+! tailwindcss v3.1.6 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -353,13 +353,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   /* 2 */
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
@@ -556,7 +549,19 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-/* put components here */
+/*,put components here */
+
+.bg-purple-200-op-30 {
+  background-color: rgba(233,213,255,0.3);
+}
+
+.bg-purple-200-op-40 {
+  background-color: rgba(233,213,255,0.4);
+}
+
+.bg-blue-800-op-20 {
+  background-color: rgba(30,64,175,0.2);
+}
 
 .static {
   position: static;
@@ -676,28 +681,6 @@ video {
   border-color: rgb(254,249,195);
 }
 
-.bg-purple-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(233,213,255);
-}
-
-.bg-blue-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30,64,175);
-}
-
-.bg-opacity-40 {
-  --tw-bg-opacity: 0.4;
-}
-
-.bg-opacity-20 {
-  --tw-bg-opacity: 0.2;
-}
-
-.bg-opacity-30 {
-  --tw-bg-opacity: 0.3;
-}
-
 .p-2 {
   padding: 0.5rem;
 }
@@ -761,31 +744,21 @@ video {
   color: rgb(187,247,208);
 }
 
+.hover\:bg-purple-200-op-60:hover {
+  background-color: rgba(233,213,255,0.6);
+}
+
+.hover\:bg-purple-600-op-40:hover {
+  background-color: rgba(147,51,234,0.4);
+}
+
+.hover\:bg-red-900-op-10:hover {
+  background-color: rgba(127,29,29,0.1);
+}
+
 .hover\:border-gray-100:hover {
   --tw-border-opacity: 1;
   border-color: rgb(243,244,246);
-}
-
-.hover\:bg-purple-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(147,51,234);
-}
-
-.hover\:bg-red-900:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(127,29,29);
-}
-
-.hover\:bg-opacity-40:hover {
-  --tw-bg-opacity: 0.4;
-}
-
-.hover\:bg-opacity-10:hover {
-  --tw-bg-opacity: 0.1;
-}
-
-.hover\:bg-opacity-60:hover {
-  --tw-bg-opacity: 0.6;
 }
 
 .hover\:text-gray-100:hover {
@@ -803,23 +776,17 @@ video {
           text-decoration-line: underline;
 }
 
+.active\:bg-cyan-400-op-75:active {
+  background-color: rgba(34,211,238,0.75);
+}
+
+.active\:bg-yellow-700-op-20:active {
+  background-color: rgba(161,98,7,0.2);
+}
+
 .active\:border-yellow-200:active {
   --tw-border-opacity: 1;
   border-color: rgb(254,240,138);
-}
-
-.active\:bg-yellow-700:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(161,98,7);
-}
-
-.active\:bg-cyan-400:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34,211,238);
-}
-
-.active\:bg-opacity-75:active {
-  --tw-bg-opacity: 0.75;
 }
 
 .active\:text-yellow-200:active {
