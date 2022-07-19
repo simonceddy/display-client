@@ -10,7 +10,7 @@ function IconWrapper({ Icon, onClick, size = 40 }) {
     <button
       type="button"
       onClick={onClick}
-      className="m-2 hover:text-cyan-800-op-60 active:text-yellow-200 p-1 bg-purple-200-op-30 active:bg-cyan-400-op-75 rounded-md"
+      className="m-2 hover:text-cyan-800 active:text-yellow-200 p-1 bg-purple-200-op-30 active:bg-cyan-400-op-75 rounded-md"
     >
       <Icon size={size} />
     </button>

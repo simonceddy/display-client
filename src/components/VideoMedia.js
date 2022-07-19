@@ -17,7 +17,7 @@ function VideoMedia({ src }) {
         onPlay={play}
         onPause={pause}
         style={{
-          maxHeight: '70vh',
+          maxHeight: '800px',
           width: 'auto'
         }}
         src={src}

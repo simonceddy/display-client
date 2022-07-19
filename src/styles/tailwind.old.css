@@ -793,3 +793,8 @@ video {
   --tw-text-opacity: 1;
   color: rgb(254,240,138);
 }
+
+.hover\:text-cyan-800:hover {
+  --tw-text-opacity: 1;
+  color: rgb(21,94,117);
+}

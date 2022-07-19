@@ -11,6 +11,9 @@ module.exports = {
         '.bg-cyan-400-op-75': {
           backgroundColor: 'rgba(34,211,238,0.75)'
         },
+        '.bg-cyan-800-op-60': {
+          backgroundColor: 'rgb(21,94,117,0.60)'
+        },
         '.bg-purple-200-op-30': {
           backgroundColor: 'rgba(233,213,255,0.3)'
         },
