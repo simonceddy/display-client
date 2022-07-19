@@ -549,7 +549,7 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-/*,put components here */
+/* put components here */
 
 .bg-purple-200-op-30 {
   background-color: rgba(233,213,255,0.3);
@@ -575,9 +575,23 @@ video {
   margin: 0.5rem;
 }
 
+.m-1 {
+  margin: 0.25rem;
+}
+
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
+}
+
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .mb-2 {
@@ -792,9 +806,4 @@ video {
 .active\:text-yellow-200:active {
   --tw-text-opacity: 1;
   color: rgb(254,240,138);
-}
-
-.hover\:text-cyan-800:hover {
-  --tw-text-opacity: 1;
-  color: rgb(21,94,117);
 }

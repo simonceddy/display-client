@@ -10,7 +10,7 @@ function IconWrapper({ Icon, onClick, size = 40 }) {
     <button
       type="button"
       onClick={onClick}
-      className="m-2 hover:text-cyan-800 active:text-yellow-200 p-1 bg-purple-200-op-30 active:bg-cyan-400-op-75 rounded-md"
+      className="my-1 mx-2 hover:text-cyan-800 active:text-yellow-200 p-1 bg-purple-200-op-30 active:bg-cyan-400-op-75 rounded-md"
     >
       <Icon size={size} />
     </button>
@@ -18,7 +18,14 @@ function IconWrapper({ Icon, onClick, size = 40 }) {
 }
 
 function VideoControls({
-  isPlaying = false, onPlay, onPause, onStop, iconSize, isFinished = false
+  isPlaying = false,
+  onPlay,
+  onPause,
+  onStop,
+  iconSize,
+  isFinished = false,
+  volume = 0.75,
+  setVolume,
 }) {
   return (
     <div className="flex flex-row justify-around items-center p-1">
@@ -32,6 +39,24 @@ function VideoControls({
       ) : (
         <IconWrapper Icon={StopIcon} onClick={onStop} size={iconSize} />
       )}
+      <label htmlFor="volume-slider" className="bg-purple-200-op-30 mx-2 my-1 p-1 flex flex-col justify-start items-start h-full">
+        <span className="font-bold">
+          Volume:
+        </span>
+        <input
+          id="volume-slider"
+          name="volume-slider"
+          className=""
+          type="range"
+          value={volume}
+          step={0.05}
+          min={0}
+          max={1}
+          onChange={(e) => {
+            if (setVolume) setVolume(e.target.value);
+          }}
+        />
+      </label>
     </div>
   );
 }

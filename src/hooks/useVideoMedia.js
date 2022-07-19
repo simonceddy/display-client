@@ -1,8 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 
-function useVideoMedia() {
+const defaultOpts = {
+  volume: 0.75,
+  onVolumeChange: null
+};
+
+function useVideoMedia(options = {}) {
+  const opts = { ...defaultOpts, ...options };
   const [isPlaying, setIsPlaying] = useState(true);
   const [isFinished, setIsFinished] = useState(false);
+  const [mediaVolume, setMediaVolume] = useState(opts.volume);
   const ref = useRef(null);
 
   const play = () => {
@@ -24,13 +31,26 @@ function useVideoMedia() {
     setIsPlaying(false);
   };
 
+  const setVolume = (vol) => {
+    if (ref.current && vol <= 1 && vol >= 0) {
+      ref.current.volume = vol;
+      setMediaVolume(vol);
+    }
+  };
+
   useEffect(() => {
     if (ref.current && ref.current.addEventListener) {
+      ref.current.volume = mediaVolume;
       ref.current.addEventListener('ended', () => setIsFinished(true));
+      if (opts.onVolumeChange) {
+        ref.current.addEventListener('volumechange', () => opts.onVolumeChange(ref.current.volume));
+      }
     }
   }, [ref]);
 
   return {
+    volume: mediaVolume,
+    setVolume,
     isFinished,
     isPlaying,
     play,
