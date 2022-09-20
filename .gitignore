@@ -12,6 +12,7 @@
 
 # production
 /build
+/client
 
 /public/img/*.png
 
