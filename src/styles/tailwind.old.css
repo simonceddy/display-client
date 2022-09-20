@@ -563,6 +563,10 @@ video {
   background-color: rgba(30,64,175,0.2);
 }
 
+.bg-blue-800-op-60 {
+  background-color: rgba(30,64,175,0.6);
+}
+
 .static {
   position: static;
 }
