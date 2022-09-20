@@ -4,6 +4,7 @@ import FlexboxLink from '../../components/FlexboxLink';
 import { useFetchHomeDataQuery } from '../../services/api';
 import { DISPLAY_DEFAULT_TITLE, MEDIA_BASE_URI } from '../../shared/consts';
 import getFlexWidth from '../../util/getFlexWidth';
+import thumbsrc from '../../util/thumbsrc';
 import { setDisplayTitle } from '../DisplayTitle/displayTitleSlice';
 
 function Homepage() {
@@ -55,7 +56,7 @@ function Homepage() {
                 maxHeight: '200px',
                 maxWidth: '100%'
               }}
-              src={`${MEDIA_BASE_URI}thumbs/${thumbnail.src}`}
+              src={`${MEDIA_BASE_URI}thumbs/${thumbsrc(thumbnail.src)}`}
               alt={thumbnail.alt || title}
             />
           ) : null}

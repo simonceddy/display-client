@@ -5,6 +5,7 @@ import FlexboxLink from '../../components/FlexboxLink';
 import { useFetchCategoryDataQuery } from '../../services/api';
 import { MEDIA_BASE_URI } from '../../shared/consts';
 import getFlexWidth from '../../util/getFlexWidth';
+import thumbsrc from '../../util/thumbsrc';
 // import { preloadAllMedia } from '../../util/preloadItemMedia';
 import { setDisplayTitle } from '../DisplayTitle/displayTitleSlice';
 
@@ -57,7 +58,7 @@ function Category() {
                   maxHeight: '200px',
                   width: 'auto'
                 }}
-                src={`${MEDIA_BASE_URI}thumbs/${thumbnail.src}`}
+                src={`${MEDIA_BASE_URI}thumbs/${thumbsrc(thumbnail.src)}`}
                 alt={thumbnail.alt || title}
               />
             ) : null}
@@ -79,7 +80,7 @@ function Category() {
                   maxHeight: '200px',
                   width: 'auto'
                 }}
-                src={`${MEDIA_BASE_URI}thumbs/${thumbnail.src}`}
+                src={`${MEDIA_BASE_URI}thumbs/${thumbsrc(thumbnail.src)}`}
                 alt={thumbnail.alt || title}
               />
             ) : null}
