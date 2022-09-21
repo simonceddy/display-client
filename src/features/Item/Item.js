@@ -57,9 +57,11 @@ function Item() {
             />
           ) : null}
         </div>
-        <div className="text-green-200 p-4 mb-4 text-xl rounded-md bg-blue-800-op-60">
-          {parse(data.body)}
-        </div>
+        {data.body && (
+          <div className="text-green-200 p-4 mb-4 text-xl rounded-md bg-blue-800-op-60">
+            {parse(data.body)}
+          </div>
+        )}
       </div>
       <div className="h-full flex flex-col justify-center items-end w-32 p-4">
         {data.next ? (
