@@ -46,7 +46,7 @@ function Homepage() {
           to={`/category/${key}`}
           key={`category-box-${key}`}
           style={{
-            flex: `1 1 ${flexWidth}%`
+            flex: `1 0 ${flexWidth}%`
           }}
         >
           {thumbnail && thumbnail.src ? (

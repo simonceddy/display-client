@@ -39,7 +39,7 @@ function App() {
             <NavbarLink to={-1}><BackIcon size={64} /></NavbarLink>
           </Navbar>
         </div>
-        <div className="relative flex-1 w-full">
+        <div className="relative flex-1 w-full overflow-y-scroll whitespace-nowrap">
           <AppRoutes />
         </div>
       </OuterContainer>

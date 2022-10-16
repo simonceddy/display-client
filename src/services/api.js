@@ -6,7 +6,7 @@ export const displayApi = createApi({
   keepUnusedDataFor: 600, // TODO possibly make this much longer
   endpoints: (builder) => ({
     fetchHomeData: builder.query({
-      query: () => '/category?published=true',
+      query: () => '/category?published=true&archived=false',
     }),
     fetchCategoryData: builder.query({
       query: ({ key, sub = null }) => {

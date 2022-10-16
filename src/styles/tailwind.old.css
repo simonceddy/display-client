@@ -762,6 +762,14 @@ video {
   color: rgb(187,247,208);
 }
 
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
 .hover\:bg-purple-200-op-60:hover {
   background-color: rgba(233,213,255,0.6);
 }
