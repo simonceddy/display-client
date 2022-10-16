@@ -23,6 +23,9 @@ export const displayApi = createApi({
         return uri;
       },
     }),
+    fetchItemsKeys: builder.query({
+      query: ({ key, sub }) => `/category/${key}${sub ? `/subCategory/${sub}` : ''}/items/keys`
+    }),
   }),
 });
 
@@ -31,4 +34,5 @@ export const {
   useFetchCategoryDataQuery,
   useFetchItemDataQuery,
   usePrefetch,
+  useFetchItemsKeysQuery
 } = displayApi;

@@ -10,7 +10,7 @@ function useVideoMedia(options = {}) {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isFinished, setIsFinished] = useState(false);
   const [mediaVolume, setMediaVolume] = useState(opts.volume);
-  const ref = useRef(null);
+  const ref = useRef(document.createElement('video'));
 
   const play = () => {
     if (!isPlaying && ref.current) ref.current.play();
@@ -43,7 +43,9 @@ function useVideoMedia(options = {}) {
       ref.current.volume = mediaVolume;
       ref.current.addEventListener('ended', () => setIsFinished(true));
       if (opts.onVolumeChange) {
-        ref.current.addEventListener('volumechange', () => opts.onVolumeChange(ref.current.volume));
+        ref.current.addEventListener('volumechange', () => {
+          if (ref.current) opts.onVolumeChange(ref.current.volume);
+        });
       }
     }
   }, [ref]);

@@ -11,6 +11,7 @@ import ItemMedia from '../../components/ItemMedia';
 import { useFetchItemDataQuery } from '../../services/api';
 import { MEDIA_BASE_URI } from '../../shared/consts';
 import { setDisplayTitle } from '../DisplayTitle/displayTitleSlice';
+import useNextPrevItem from '../../hooks/useNextPrevItem';
 
 function Item() {
   const { categoryId, itemId, subCategoryId } = useParams();
@@ -23,6 +24,11 @@ function Item() {
     sub: subCategoryId || null
   });
 
+  const {
+    next,
+    prev
+  } = useNextPrevItem(itemId, categoryId, subCategoryId || null);
+  console.log(next, prev);
   useEffect(() => {
     let titleSet = false;
     if (!titleSet && isSuccess) {
@@ -41,8 +47,8 @@ function Item() {
   return (
     <div className="w-full h-full flex flex-row justify-between items-center">
       <div className="h-full flex flex-col justify-center items-start w-32 p-4">
-        {data.prev ? (
-          <GotoItemLink className="h-full w-4/5 rounded-md p-2 items-start flex flex-col justify-center" to={`${baseUri}/item/${data.prev}`}>
+        {prev && prev.key ? (
+          <GotoItemLink className="h-full w-4/5 rounded-md p-2 items-start flex flex-col justify-center" to={`${baseUri}/item/${prev.key}`}>
             <PreviousIcon size={50} />
           </GotoItemLink>
         ) : null}
@@ -64,10 +70,10 @@ function Item() {
         )}
       </div>
       <div className="h-full flex flex-col justify-center items-end w-32 p-4">
-        {data.next ? (
+        {next && next.key ? (
           <GotoItemLink
             className="h-full w-4/5 rounded-md p-2 items-end flex flex-col justify-center"
-            to={`${baseUri}/item/${data.next}`}
+            to={`${baseUri}/item/${next.key}`}
           >
             <NextIcon size={50} />
           </GotoItemLink>
