@@ -28,7 +28,7 @@ function Item() {
     next,
     prev
   } = useNextPrevItem(itemId, categoryId, subCategoryId || null);
-  console.log(next, prev);
+  // console.log(next, prev);
   useEffect(() => {
     let titleSet = false;
     if (!titleSet && isSuccess) {
@@ -55,7 +55,7 @@ function Item() {
       </div>
       <div className="flex-1 flex flex-col w-full h-full justify-start items-center">
         <div className="flex-1 flex flex-col justify-center items-center">
-          {data.media[0] && data.media[0].src ? (
+          {data.media && data.media[0] && data.media[0].src ? (
             <ItemMedia
               src={`${MEDIA_BASE_URI}${data.media[0].src}`}
               alt={data.media[0].src || data.title}

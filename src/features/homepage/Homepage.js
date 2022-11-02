@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import FlexboxLink from '../../components/FlexboxLink';
-import { useFetchHomeDataQuery } from '../../services/api';
+import { useFetchHomeDataQuery, useFetchManifestQuery } from '../../services/api';
 import { DISPLAY_DEFAULT_TITLE, MEDIA_BASE_URI } from '../../shared/consts';
 import getFlexWidth from '../../util/getFlexWidth';
 import thumbsrc from '../../util/thumbsrc';
@@ -11,11 +11,12 @@ function Homepage() {
   const {
     data, isLoading, isSuccess, error
   } = useFetchHomeDataQuery();
+  const { data: manifest } = useFetchManifestQuery();
   const dispatch = useDispatch();
   useEffect(() => {
     let titleSet = false;
     if (!titleSet && isSuccess) {
-      dispatch(setDisplayTitle(DISPLAY_DEFAULT_TITLE));
+      dispatch(setDisplayTitle(manifest['display-title'] || DISPLAY_DEFAULT_TITLE));
     }
     return () => {
       titleSet = true;
