@@ -9,19 +9,20 @@ import { setDisplayTitle } from '../DisplayTitle/displayTitleSlice';
 
 function Homepage() {
   const {
-    data, isLoading, isSuccess, error
+    data, isLoading, error
   } = useFetchHomeDataQuery();
-  const { data: manifest } = useFetchManifestQuery();
+  const { data: manifest, isSuccess: manifestLoaded } = useFetchManifestQuery();
   const dispatch = useDispatch();
   useEffect(() => {
     let titleSet = false;
-    if (!titleSet && isSuccess) {
+    if (!titleSet && manifestLoaded) {
       dispatch(setDisplayTitle(manifest['display-title'] || DISPLAY_DEFAULT_TITLE));
+      document.getElementsByTagName('title')[0].innerHTML = manifest['display-title'] || DISPLAY_DEFAULT_TITLE;
     }
     return () => {
       titleSet = true;
     };
-  }, [isLoading]);
+  }, [manifestLoaded]);
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
