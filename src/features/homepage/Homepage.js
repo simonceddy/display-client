@@ -17,7 +17,6 @@ function Homepage() {
     let titleSet = false;
     if (!titleSet && manifestLoaded) {
       dispatch(setDisplayTitle(manifest['display-title'] || DISPLAY_DEFAULT_TITLE));
-      document.getElementsByTagName('title')[0].innerHTML = manifest['display-title'] || DISPLAY_DEFAULT_TITLE;
     }
     return () => {
       titleSet = true;

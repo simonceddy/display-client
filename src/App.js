@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { BiHome as HomeIcon, BiArrowBack as BackIcon } from 'react-icons/bi';
 // import { useEffect } from 'react';
 // import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import OuterContainer from './components/OuterContainer';
 import Navbar from './components/Navbar';
 import NavbarLink from './components/NavbarLink';
@@ -10,28 +11,26 @@ import AppRoutes from './containers/AppRoutes';
 import ErrorBoundary from './containers/ErrorBoundary';
 import DisplayTitle from './features/DisplayTitle/DisplayTitle';
 // import { setDisplayTitle } from './features/DisplayTitle/displayTitleSlice';
-// import { useFetchManifestQuery } from './services/api';
+import { useFetchManifestQuery } from './services/api';
 
 function App() {
   // const dispatch = useDispatch();
-  // const { data, isSuccess } = useFetchManifestQuery();
-  // useEffect(() => {
-  //   let setup = false;
-  //   if (!setup && isSuccess) {
-  //     console.log(data);
-  //     if (data['display-title']
-  //           && data['display-title'].trim
-  //           && data['display-title'].trim().length > 0
-  //     ) {
-  //       // Set title from manifest
-  //       document.getElementsByTagName('title')[0].innerHTML = data['display-title'];
-  //       dispatch(setDisplayTitle(data['display-title']));
-  //     }
-  //   }
-  //   return () => {
-  //     setup = true;
-  //   };
-  // }, [data]);
+  const { data, isSuccess } = useFetchManifestQuery();
+  useEffect(() => {
+    let setup = false;
+    if (!setup && isSuccess) {
+      if (data['display-title']
+            && data['display-title'].trim
+            && data['display-title'].trim().length > 0
+      ) {
+        // Set title from manifest
+        document.getElementsByTagName('title')[0].innerHTML = data['display-title'];
+      }
+    }
+    return () => {
+      setup = true;
+    };
+  }, [isSuccess]);
 
   return (
     <ErrorBoundary>
