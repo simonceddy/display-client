@@ -28,6 +28,9 @@ export const displayApi = createApi({
     }),
     fetchManifest: builder.query({
       query: () => '/display-conf'
+    }),
+    fetchThumbnailsForPreload: builder.query({
+      query: () => '/preload/thumbnails'
     })
   }),
 });
@@ -38,5 +41,6 @@ export const {
   useFetchItemDataQuery,
   usePrefetch,
   useFetchItemsKeysQuery,
-  useFetchManifestQuery
+  useFetchManifestQuery,
+  useFetchThumbnailsForPreloadQuery,
 } = displayApi;
